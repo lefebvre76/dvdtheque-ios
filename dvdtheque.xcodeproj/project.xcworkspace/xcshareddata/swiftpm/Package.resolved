@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "swift-utilities",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/lefebvre76/swift-utilities",
+      "state" : {
+        "branch" : "main",
+        "revision" : "1fb47c569698479375c7108c63b626aae20f9676"
+      }
+    }
+  ],
+  "version" : 2
+}

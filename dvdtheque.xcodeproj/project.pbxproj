@@ -1,0 +1,504 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D70F79062B2C559F004F862A /* dvdthequeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70F79052B2C559F004F862A /* dvdthequeApp.swift */; };
+		D70F79082B2C559F004F862A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70F79072B2C559F004F862A /* ContentView.swift */; };
+		D70F790A2B2C55A0004F862A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D70F79092B2C55A0004F862A /* Assets.xcassets */; };
+		D70F790D2B2C55A0004F862A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D70F790C2B2C55A0004F862A /* Preview Assets.xcassets */; };
+		D70F790F2B2C55A0004F862A /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70F790E2B2C55A0004F862A /* Persistence.swift */; };
+		D70F79122B2C55A0004F862A /* dvdtheque.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D70F79102B2C55A0004F862A /* dvdtheque.xcdatamodeld */; };
+		D70F791C2B2C56B2004F862A /* LightBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70F791B2B2C56B2004F862A /* LightBox.swift */; };
+		D70F791E2B2C5787004F862A /* Illustration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70F791D2B2C5787004F862A /* Illustration.swift */; };
+		D70F79212B2C586D004F862A /* DvdthequeApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70F79202B2C586D004F862A /* DvdthequeApiService.swift */; };
+		D7358C7B2B303CF60049FF72 /* MyBoxesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7358C7A2B303CF60049FF72 /* MyBoxesView.swift */; };
+		D7358C7D2B303D4A0049FF72 /* MyBoxesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7358C7C2B303D4A0049FF72 /* MyBoxesViewModel.swift */; };
+		D7358C7F2B30414A0049FF72 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7358C7E2B30414A0049FF72 /* ApiService.swift */; };
+		D7358C822B307B040049FF72 /* BoxItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7358C812B307B040049FF72 /* BoxItemView.swift */; };
+		D7358C842B307CE00049FF72 /* LoadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7358C832B307CE00049FF72 /* LoadView.swift */; };
+		D7358C862B307F600049FF72 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7358C852B307F600049FF72 /* LoginView.swift */; };
+		D7358C882B307FAE0049FF72 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7358C872B307FAE0049FF72 /* LoginViewModel.swift */; };
+		D7358C8A2B308C800049FF72 /* Persistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7358C892B308C800049FF72 /* Persistance.swift */; };
+		D7358C8C2B30923B0049FF72 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = D7358C8B2B30923B0049FF72 /* Localizable.xcstrings */; };
+		D7358C8F2B3095CF0049FF72 /* lefebvre76-utilities in Frameworks */ = {isa = PBXBuildFile; productRef = D7358C8E2B3095CF0049FF72 /* lefebvre76-utilities */; };
+		D7358C912B309D820049FF72 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7358C902B309D820049FF72 /* UserView.swift */; };
+		D7358C932B309DB20049FF72 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7358C922B309DB20049FF72 /* UserViewModel.swift */; };
+		D7358C962B30B35B0049FF72 /* AuthContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7358C952B30B35B0049FF72 /* AuthContainerView.swift */; };
+		D7358C982B30B4000049FF72 /* AuthContainerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7358C972B30B4000049FF72 /* AuthContainerViewModel.swift */; };
+		D7358C9A2B30B83D0049FF72 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7358C992B30B83D0049FF72 /* User.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D70F79022B2C559F004F862A /* dvdtheque.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dvdtheque.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D70F79052B2C559F004F862A /* dvdthequeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dvdthequeApp.swift; sourceTree = "<group>"; };
+		D70F79072B2C559F004F862A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D70F79092B2C55A0004F862A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D70F790C2B2C55A0004F862A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D70F790E2B2C55A0004F862A /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		D70F79112B2C55A0004F862A /* dvdtheque.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = dvdtheque.xcdatamodel; sourceTree = "<group>"; };
+		D70F791B2B2C56B2004F862A /* LightBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightBox.swift; sourceTree = "<group>"; };
+		D70F791D2B2C5787004F862A /* Illustration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Illustration.swift; sourceTree = "<group>"; };
+		D70F79202B2C586D004F862A /* DvdthequeApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DvdthequeApiService.swift; sourceTree = "<group>"; };
+		D7358C7A2B303CF60049FF72 /* MyBoxesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBoxesView.swift; sourceTree = "<group>"; };
+		D7358C7C2B303D4A0049FF72 /* MyBoxesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBoxesViewModel.swift; sourceTree = "<group>"; };
+		D7358C7E2B30414A0049FF72 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		D7358C812B307B040049FF72 /* BoxItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxItemView.swift; sourceTree = "<group>"; };
+		D7358C832B307CE00049FF72 /* LoadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadView.swift; sourceTree = "<group>"; };
+		D7358C852B307F600049FF72 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		D7358C872B307FAE0049FF72 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		D7358C892B308C800049FF72 /* Persistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistance.swift; sourceTree = "<group>"; };
+		D7358C8B2B30923B0049FF72 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		D7358C902B309D820049FF72 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
+		D7358C922B309DB20049FF72 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		D7358C952B30B35B0049FF72 /* AuthContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthContainerView.swift; sourceTree = "<group>"; };
+		D7358C972B30B4000049FF72 /* AuthContainerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthContainerViewModel.swift; sourceTree = "<group>"; };
+		D7358C992B30B83D0049FF72 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D70F78FF2B2C559F004F862A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7358C8F2B3095CF0049FF72 /* lefebvre76-utilities in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D70F78F92B2C559F004F862A = {
+			isa = PBXGroup;
+			children = (
+				D70F79042B2C559F004F862A /* dvdtheque */,
+				D70F79032B2C559F004F862A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D70F79032B2C559F004F862A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D70F79022B2C559F004F862A /* dvdtheque.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D70F79042B2C559F004F862A /* dvdtheque */ = {
+			isa = PBXGroup;
+			children = (
+				D70F791F2B2C585D004F862A /* Service */,
+				D70F791A2B2C5698004F862A /* ViewModel */,
+				D70F79192B2C5692004F862A /* View */,
+				D70F79182B2C567A004F862A /* Model */,
+				D70F79052B2C559F004F862A /* dvdthequeApp.swift */,
+				D70F79072B2C559F004F862A /* ContentView.swift */,
+				D70F79092B2C55A0004F862A /* Assets.xcassets */,
+				D70F790E2B2C55A0004F862A /* Persistence.swift */,
+				D70F79102B2C55A0004F862A /* dvdtheque.xcdatamodeld */,
+				D70F790B2B2C55A0004F862A /* Preview Content */,
+				D7358C8B2B30923B0049FF72 /* Localizable.xcstrings */,
+			);
+			path = dvdtheque;
+			sourceTree = "<group>";
+		};
+		D70F790B2B2C55A0004F862A /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				D70F790C2B2C55A0004F862A /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D70F79182B2C567A004F862A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D70F791B2B2C56B2004F862A /* LightBox.swift */,
+				D70F791D2B2C5787004F862A /* Illustration.swift */,
+				D7358C992B30B83D0049FF72 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D70F79192B2C5692004F862A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D7358C802B307AED0049FF72 /* Components */,
+				D7358C7A2B303CF60049FF72 /* MyBoxesView.swift */,
+				D7358C852B307F600049FF72 /* LoginView.swift */,
+				D7358C902B309D820049FF72 /* UserView.swift */,
+				D7358C952B30B35B0049FF72 /* AuthContainerView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D70F791A2B2C5698004F862A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D7358C7C2B303D4A0049FF72 /* MyBoxesViewModel.swift */,
+				D7358C872B307FAE0049FF72 /* LoginViewModel.swift */,
+				D7358C922B309DB20049FF72 /* UserViewModel.swift */,
+				D7358C972B30B4000049FF72 /* AuthContainerViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D70F791F2B2C585D004F862A /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				D70F79202B2C586D004F862A /* DvdthequeApiService.swift */,
+				D7358C7E2B30414A0049FF72 /* ApiService.swift */,
+				D7358C892B308C800049FF72 /* Persistance.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		D7358C802B307AED0049FF72 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				D7358C812B307B040049FF72 /* BoxItemView.swift */,
+				D7358C832B307CE00049FF72 /* LoadView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D70F79012B2C559F004F862A /* dvdtheque */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D70F79152B2C55A0004F862A /* Build configuration list for PBXNativeTarget "dvdtheque" */;
+			buildPhases = (
+				D70F78FE2B2C559F004F862A /* Sources */,
+				D70F78FF2B2C559F004F862A /* Frameworks */,
+				D70F79002B2C559F004F862A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = dvdtheque;
+			packageProductDependencies = (
+				D7358C8E2B3095CF0049FF72 /* lefebvre76-utilities */,
+			);
+			productName = dvdtheque;
+			productReference = D70F79022B2C559F004F862A /* dvdtheque.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D70F78FA2B2C559F004F862A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					D70F79012B2C559F004F862A = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
+				};
+			};
+			buildConfigurationList = D70F78FD2B2C559F004F862A /* Build configuration list for PBXProject "dvdtheque" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				fr,
+			);
+			mainGroup = D70F78F92B2C559F004F862A;
+			packageReferences = (
+				D7358C8D2B3095CF0049FF72 /* XCRemoteSwiftPackageReference "swift-utilities" */,
+			);
+			productRefGroup = D70F79032B2C559F004F862A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D70F79012B2C559F004F862A /* dvdtheque */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D70F79002B2C559F004F862A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D70F790D2B2C55A0004F862A /* Preview Assets.xcassets in Resources */,
+				D70F790A2B2C55A0004F862A /* Assets.xcassets in Resources */,
+				D7358C8C2B30923B0049FF72 /* Localizable.xcstrings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D70F78FE2B2C559F004F862A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7358C842B307CE00049FF72 /* LoadView.swift in Sources */,
+				D70F79212B2C586D004F862A /* DvdthequeApiService.swift in Sources */,
+				D70F79122B2C55A0004F862A /* dvdtheque.xcdatamodeld in Sources */,
+				D7358C912B309D820049FF72 /* UserView.swift in Sources */,
+				D70F791E2B2C5787004F862A /* Illustration.swift in Sources */,
+				D70F791C2B2C56B2004F862A /* LightBox.swift in Sources */,
+				D7358C962B30B35B0049FF72 /* AuthContainerView.swift in Sources */,
+				D70F790F2B2C55A0004F862A /* Persistence.swift in Sources */,
+				D7358C9A2B30B83D0049FF72 /* User.swift in Sources */,
+				D7358C882B307FAE0049FF72 /* LoginViewModel.swift in Sources */,
+				D7358C982B30B4000049FF72 /* AuthContainerViewModel.swift in Sources */,
+				D7358C822B307B040049FF72 /* BoxItemView.swift in Sources */,
+				D7358C8A2B308C800049FF72 /* Persistance.swift in Sources */,
+				D70F79082B2C559F004F862A /* ContentView.swift in Sources */,
+				D7358C7F2B30414A0049FF72 /* ApiService.swift in Sources */,
+				D70F79062B2C559F004F862A /* dvdthequeApp.swift in Sources */,
+				D7358C862B307F600049FF72 /* LoginView.swift in Sources */,
+				D7358C932B309DB20049FF72 /* UserViewModel.swift in Sources */,
+				D7358C7B2B303CF60049FF72 /* MyBoxesView.swift in Sources */,
+				D7358C7D2B303D4A0049FF72 /* MyBoxesViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		D70F79132B2C55A0004F862A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D70F79142B2C55A0004F862A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D70F79162B2C55A0004F862A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"dvdtheque/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.loic-lefebvre.dvdtheque";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D70F79172B2C55A0004F862A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"dvdtheque/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.loic-lefebvre.dvdtheque";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D70F78FD2B2C559F004F862A /* Build configuration list for PBXProject "dvdtheque" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D70F79132B2C55A0004F862A /* Debug */,
+				D70F79142B2C55A0004F862A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D70F79152B2C55A0004F862A /* Build configuration list for PBXNativeTarget "dvdtheque" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D70F79162B2C55A0004F862A /* Debug */,
+				D70F79172B2C55A0004F862A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D7358C8D2B3095CF0049FF72 /* XCRemoteSwiftPackageReference "swift-utilities" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/lefebvre76/swift-utilities";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D7358C8E2B3095CF0049FF72 /* lefebvre76-utilities */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D7358C8D2B3095CF0049FF72 /* XCRemoteSwiftPackageReference "swift-utilities" */;
+			productName = "lefebvre76-utilities";
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		D70F79102B2C55A0004F862A /* dvdtheque.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D70F79112B2C55A0004F862A /* dvdtheque.xcdatamodel */,
+			);
+			currentVersion = D70F79112B2C55A0004F862A /* dvdtheque.xcdatamodel */;
+			path = dvdtheque.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = D70F78FA2B2C559F004F862A /* Project object */;
+}
