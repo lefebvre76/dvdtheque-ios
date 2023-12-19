@@ -119,6 +119,54 @@
         }
       }
     },
+    "user.favorite_actors" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your favorites actors"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vos acteurs favoris"
+          }
+        }
+      }
+    },
+    "user.favorite_directors" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your favorites directors"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vos acteurs favoris"
+          }
+        }
+      }
+    },
+    "user.favorite_kinds" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your favorites kinds"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vos genres favoris"
+          }
+        }
+      }
+    },
     "user.hello" : {
       "localizations" : {
         "en" : {
