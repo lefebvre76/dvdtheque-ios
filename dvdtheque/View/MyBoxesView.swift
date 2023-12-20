@@ -16,7 +16,9 @@ struct MyBoxesView: View {
             NavigationStack {
                 List {
                     ForEach(myBoxesViewModel.boxes, id: \.id) { box in
-                        BoxItemView(box: box)
+                        NavigationLink(destination: BoxView(boxViewModel: BoxViewModel(lightBox: box))) {
+                            BoxItemView(box: box)
+                        }
                     }
                     .listRowSeparator(.hidden,
                                       edges: .all)

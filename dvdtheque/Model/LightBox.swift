@@ -7,13 +7,13 @@
 
 import Foundation
 
-struct LigthBox: Decodable {
+struct LightBox: Decodable {
     let id: Int
     let type: String
     let title: String
     let illustration: Illustration
 }
 
-struct LigtBoxResponse: Decodable {
-    let data: [LigthBox]
+struct LightBoxResponse: Decodable {
+    let data: [LightBox]
 }

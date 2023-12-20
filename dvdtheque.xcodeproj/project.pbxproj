@@ -31,6 +31,12 @@
 		D7358C962B30B35B0049FF72 /* AuthContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7358C952B30B35B0049FF72 /* AuthContainerView.swift */; };
 		D7358C982B30B4000049FF72 /* AuthContainerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7358C972B30B4000049FF72 /* AuthContainerViewModel.swift */; };
 		D7358C9A2B30B83D0049FF72 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7358C992B30B83D0049FF72 /* User.swift */; };
+		D74495932B32D5E90061B338 /* BoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74495922B32D5E90061B338 /* BoxView.swift */; };
+		D74495952B32D60C0061B338 /* BoxViewDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74495942B32D60C0061B338 /* BoxViewDetail.swift */; };
+		D74495972B32D6300061B338 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74495962B32D6300061B338 /* Box.swift */; };
+		D74495992B32DB890061B338 /* BoxDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74495982B32DB890061B338 /* BoxDetailView.swift */; };
+		D744959B2B32DFDD0061B338 /* Celebrity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D744959A2B32DFDD0061B338 /* Celebrity.swift */; };
+		D744959D2B32DFE60061B338 /* Kind.swift in Sources */ = {isa = PBXBuildFile; fileRef = D744959C2B32DFE60061B338 /* Kind.swift */; };
 		D7C125B12B3203FA00245B5D /* CelebrityItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C125B02B3203FA00245B5D /* CelebrityItemView.swift */; };
 		D7C125B32B32081100245B5D /* KindItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C125B22B32081100245B5D /* KindItemView.swift */; };
 /* End PBXBuildFile section */
@@ -60,6 +66,12 @@
 		D7358C952B30B35B0049FF72 /* AuthContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthContainerView.swift; sourceTree = "<group>"; };
 		D7358C972B30B4000049FF72 /* AuthContainerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthContainerViewModel.swift; sourceTree = "<group>"; };
 		D7358C992B30B83D0049FF72 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D74495922B32D5E90061B338 /* BoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxView.swift; sourceTree = "<group>"; };
+		D74495942B32D60C0061B338 /* BoxViewDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxViewDetail.swift; sourceTree = "<group>"; };
+		D74495962B32D6300061B338 /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
+		D74495982B32DB890061B338 /* BoxDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxDetailView.swift; sourceTree = "<group>"; };
+		D744959A2B32DFDD0061B338 /* Celebrity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Celebrity.swift; sourceTree = "<group>"; };
+		D744959C2B32DFE60061B338 /* Kind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kind.swift; sourceTree = "<group>"; };
 		D7C125B02B3203FA00245B5D /* CelebrityItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelebrityItemView.swift; sourceTree = "<group>"; };
 		D7C125B22B32081100245B5D /* KindItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KindItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -124,6 +136,9 @@
 				D70F791B2B2C56B2004F862A /* LightBox.swift */,
 				D70F791D2B2C5787004F862A /* Illustration.swift */,
 				D7358C992B30B83D0049FF72 /* User.swift */,
+				D74495962B32D6300061B338 /* Box.swift */,
+				D744959A2B32DFDD0061B338 /* Celebrity.swift */,
+				D744959C2B32DFE60061B338 /* Kind.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -136,6 +151,7 @@
 				D7358C852B307F600049FF72 /* LoginView.swift */,
 				D7358C902B309D820049FF72 /* UserView.swift */,
 				D7358C952B30B35B0049FF72 /* AuthContainerView.swift */,
+				D74495922B32D5E90061B338 /* BoxView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -147,6 +163,7 @@
 				D7358C872B307FAE0049FF72 /* LoginViewModel.swift */,
 				D7358C922B309DB20049FF72 /* UserViewModel.swift */,
 				D7358C972B30B4000049FF72 /* AuthContainerViewModel.swift */,
+				D74495942B32D60C0061B338 /* BoxViewDetail.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -168,6 +185,7 @@
 				D7358C832B307CE00049FF72 /* LoadView.swift */,
 				D7C125B02B3203FA00245B5D /* CelebrityItemView.swift */,
 				D7C125B22B32081100245B5D /* KindItemView.swift */,
+				D74495982B32DB890061B338 /* BoxDetailView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -253,8 +271,10 @@
 				D7358C842B307CE00049FF72 /* LoadView.swift in Sources */,
 				D70F79212B2C586D004F862A /* DvdthequeApiService.swift in Sources */,
 				D70F79122B2C55A0004F862A /* dvdtheque.xcdatamodeld in Sources */,
+				D74495992B32DB890061B338 /* BoxDetailView.swift in Sources */,
 				D7358C912B309D820049FF72 /* UserView.swift in Sources */,
 				D70F791E2B2C5787004F862A /* Illustration.swift in Sources */,
+				D74495952B32D60C0061B338 /* BoxViewDetail.swift in Sources */,
 				D7C125B32B32081100245B5D /* KindItemView.swift in Sources */,
 				D70F791C2B2C56B2004F862A /* LightBox.swift in Sources */,
 				D7358C962B30B35B0049FF72 /* AuthContainerView.swift in Sources */,
@@ -263,12 +283,16 @@
 				D7358C882B307FAE0049FF72 /* LoginViewModel.swift in Sources */,
 				D7358C982B30B4000049FF72 /* AuthContainerViewModel.swift in Sources */,
 				D7358C822B307B040049FF72 /* BoxItemView.swift in Sources */,
+				D744959D2B32DFE60061B338 /* Kind.swift in Sources */,
+				D74495972B32D6300061B338 /* Box.swift in Sources */,
 				D7358C8A2B308C800049FF72 /* Persistance.swift in Sources */,
 				D70F79082B2C559F004F862A /* ContentView.swift in Sources */,
 				D7358C7F2B30414A0049FF72 /* ApiService.swift in Sources */,
 				D70F79062B2C559F004F862A /* dvdthequeApp.swift in Sources */,
 				D7358C862B307F600049FF72 /* LoginView.swift in Sources */,
 				D7358C932B309DB20049FF72 /* UserViewModel.swift in Sources */,
+				D744959B2B32DFDD0061B338 /* Celebrity.swift in Sources */,
+				D74495932B32D5E90061B338 /* BoxView.swift in Sources */,
 				D7C125B12B3203FA00245B5D /* CelebrityItemView.swift in Sources */,
 				D7358C7B2B303CF60049FF72 /* MyBoxesView.swift in Sources */,
 				D7358C7D2B303D4A0049FF72 /* MyBoxesViewModel.swift in Sources */,

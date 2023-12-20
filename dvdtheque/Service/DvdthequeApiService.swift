@@ -17,6 +17,7 @@ class DvdthequeApiService: ApiService {
         case logout
         case me
         case myBoxes
+        case box(id: Int)
         
         func path() -> String {
             switch self {
@@ -28,6 +29,8 @@ class DvdthequeApiService: ApiService {
                 return "me"
             case .myBoxes:
                 return "me/boxes"
+            case let .box(id):
+                return "boxes/\(id)"
             }
         }
         
@@ -66,9 +69,15 @@ class DvdthequeApiService: ApiService {
         let (_, _) = try await self.call(url: Endpoint.logout.absoluteURL, httpMethod: .post)
     }
     
-    func getMeBoxes(wishlist: Bool = false, page: Int = 1, search: String? = nil) async throws -> LigtBoxResponse {
+    func getMeBoxes(wishlist: Bool = false, page: Int = 1, search: String? = nil) async throws -> LightBoxResponse {
         let (data, _) = try await self.call(url: Endpoint.myBoxes.absoluteURL)
-        let decoded = try JSONDecoder().decode(LigtBoxResponse.self, from: data)
+        let decoded = try JSONDecoder().decode(LightBoxResponse.self, from: data)
+        return decoded
+    }
+    
+    func getBox(id: Int = 1) async throws -> Box {
+        let (data, _) = try await self.call(url: Endpoint.box(id: id).absoluteURL)
+        let decoded = try JSONDecoder().decode(Box.self, from: data)
         return decoded
     }
 }

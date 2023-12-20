@@ -9,7 +9,7 @@ import Foundation
 
 class MyBoxesViewModel: AuthContainerViewModel {
 
-    @Published public var boxes: [LigthBox] = []
+    @Published public var boxes: [LightBox] = []
     @Published public var total: Int = 0
     @Published public var showLoadMore = false
 

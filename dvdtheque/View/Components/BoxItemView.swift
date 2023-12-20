@@ -9,7 +9,7 @@ import SwiftUI
 import SwiftData
 
 struct BoxItemView: View {
-    var box: LigthBox
+    var box: LightBox
 
     var body: some View {
         HStack {
@@ -36,5 +36,5 @@ struct BoxItemView: View {
 }
 
 #Preview {
-    BoxItemView(box: LigthBox(id: 1, type: "BRD", title: "Jurassic Park Collection", illustration: Illustration(original: "http://localhost/storage/2/3d-jurassic_park_1_2_3_4_br.0.jpg", thumbnail: "http://localhost/storage/2/conversions/3d-jurassic_park_1_2_3_4_br.0-thumbnail.jpg")))
+    BoxItemView(box: LightBox(id: 1, type: "BRD", title: "Jurassic Park Collection", illustration: Illustration(original: "http://localhost/storage/2/3d-jurassic_park_1_2_3_4_br.0.jpg", thumbnail: "http://localhost/storage/2/conversions/3d-jurassic_park_1_2_3_4_br.0-thumbnail.jpg")))
 }
