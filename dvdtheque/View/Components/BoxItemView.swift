@@ -26,12 +26,20 @@ struct BoxItemView: View {
                 }
                 .frame(width: 75, height: 75)
             })
-            VStack {
-                Text(box.title).frame(maxWidth: .infinity, alignment: .leading).bold().padding(.top, 2)
+            VStack(alignment: .leading) {
+                VStack(alignment: .leading) {
+                    Text(box.title).multilineTextAlignment(.leading).frame(maxWidth: .infinity, alignment: .leading).bold()
+                    
+                }.frame(maxWidth: .infinity)
                 Spacer()
-            }.frame(maxWidth: .infinity, minHeight: 75)
-            Spacer()
-        }
+                Image("\(box.type)")
+                    .renderingMode(.template)
+                    .resizable()
+                    .scaledToFit()
+                    .foregroundColor(Color(uiColor: UIColor.label))
+                    .frame(height: 25)
+            }.frame(maxWidth: .infinity, minHeight: 75).padding(.vertical, 2)
+        }.accentColor(Color(uiColor: UIColor.label))
     }
 }
 

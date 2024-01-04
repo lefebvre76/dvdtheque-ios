@@ -13,26 +13,36 @@ struct BoxDetailView: View {
 
     var body: some View {
         ZStack(alignment: Alignment(horizontal: .center, vertical: .top)) {
-            AsyncImage(url: URL(string: box.illustration.original), content: { image in
-                image.frame(height: 200)
-            },
-                       placeholder: {
-                HStack {
-                    Image(systemName: "opticaldisc")
-                        .font(.largeTitle)
-                }
-                .frame(width: 75, height: 75)
-            }).frame(height: 200)
+            HStack {
+                AsyncImage(url: URL(string: box.illustration.original), content: { image in
+                    image.frame(height: 200)
+                },
+                           placeholder: {
+                    HStack {
+                        Image(systemName: "opticaldisc")
+                            .font(.largeTitle)
+                    }
+                    .frame(width: 75, height: 75)
+                })
+            }.frame(maxWidth: .infinity, idealHeight: 200)
             ScrollView(.vertical, showsIndicators: true) {
                 Spacer().frame(height: 250)
                 VStack {
                     Text(box.title).frame(maxWidth: .infinity, alignment: .leading).font(.title).padding(.bottom, 2)
+                    if let edition = box.edition {
+                        Text(edition).frame(maxWidth: .infinity, alignment: .leading).font(.subheadline).padding(.bottom, 2)
+                    }
                     HStack {
                         if box.year > 0 {
                             Text("\(box.year)")
                         }
                         Spacer()
-                        Text("\(box.type)")
+                        Image("\(box.type)")
+                            .renderingMode(.template)
+                            .resizable()
+                            .scaledToFit()
+                            .foregroundColor(Color(uiColor: UIColor.label))
+                            .frame(height: 25)
                     }.frame(maxWidth: .infinity)
                     ScrollView(.horizontal) {
                         HStack(spacing: 5) {
@@ -41,7 +51,7 @@ struct BoxDetailView: View {
                             }
                         }
                     }.padding(.vertical)
-                    Text("\(box.synopsis)")
+                    Text("\(box.synopsis)").frame(maxWidth: .infinity, alignment: .leading)
                     if box.directors.count > 0 {
                         Text(box.directors.count > 1 ? "box.directors" : "box.director").font(.headline).frame(maxWidth: .infinity, alignment: .leading).padding(.top, 20)
                         ScrollView(.horizontal) {
