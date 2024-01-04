@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 class ApiService {
     
@@ -13,7 +14,7 @@ class ApiService {
 
     enum ApiError: Error {
         case unauthorized
-        case unprocessableEntity(message: [String])
+        case unprocessableEntity(_ errors: [String: Any])
         case notFound
         case other
     }
@@ -50,6 +51,9 @@ class ApiService {
                 throw ApiError.unauthorized
             case 404:
                 throw ApiError.notFound
+            case 422:
+                let json = (try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]) ?? [:]
+                throw ApiError.unprocessableEntity(json)
             default:
                 throw ApiError.other
             }

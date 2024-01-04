@@ -31,12 +31,15 @@ class BoxViewModel: AuthContainerViewModel {
     private func loadDetails() async {
         do {
             let response = try await apiService.getBox(id: self.lightBox.id)
-            DispatchQueue.main.async { [weak self] in
-                guard let self else { return }
-                self.box = response
-            }
+            await setBox(response)
         } catch {
             self.managerError(error: error)
         }
+    }
+}
+
+extension BoxViewModel {
+    @MainActor private func setBox(_ value: Box) {
+        box = value
     }
 }

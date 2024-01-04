@@ -36,16 +36,25 @@ struct LoginView: View {
                 
                 Divider()
             }
+            if let message = loginViewModel.errorMessage {
+                Text("\(message)").multilineTextAlignment(.center).foregroundColor(.red).padding(.vertical)
+            }
             Button(
                 action: loginViewModel.auth,
                 label: {
-                    Text("button.login")
-                        .frame(maxWidth: .infinity, maxHeight: 45)
-                        .foregroundColor(Color.white)
-                        .background(Color.blue)
-                        .cornerRadius(30)
+                    if loginViewModel.load {
+                        ProgressView().padding(.trailing, 5)
+                        Text("button.loading")
+                    } else {
+                        Text("button.login")
+                    }
                 }
-            ).padding(.top)
+            )
+            .frame(maxWidth: .infinity, maxHeight: 45)
+            .foregroundColor(Color.white)
+            .background(Color.blue)
+            .cornerRadius(30)
+            .padding(.top).disabled(loginViewModel.load)
             Spacer()
         }
         .padding()

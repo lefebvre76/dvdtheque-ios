@@ -22,10 +22,7 @@ class UserViewModel: AuthContainerViewModel {
         Task {
             do {
                 let data = try await apiService.getUserInformations()
-                DispatchQueue.main.async { [weak self] in
-                    guard let self else { return }
-                    self.user = data
-                }
+                await setUser(data)
             } catch {
                 self.managerError(error: error)
             }
@@ -37,9 +34,18 @@ class UserViewModel: AuthContainerViewModel {
             do {
                 try await apiService.logout()
                 persistance.clear(key: .token)
+                await setShowAuthView(true)
             } catch {
                 self.managerError(error: error)
             }
         }
+    }
+    
+    @MainActor private func setShowAuthView(_ value: Bool) {
+        showAuthView = value
+    }
+
+    @MainActor private func setUser(_ value: User?) {
+        user = value
     }
 }

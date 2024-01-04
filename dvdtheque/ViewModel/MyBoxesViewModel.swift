@@ -23,11 +23,8 @@ class MyBoxesViewModel: AuthContainerViewModel {
     func loadData() {
         currentPage = 1
         Task {
-            DispatchQueue.main.async { [weak self] in
-                guard let self else { return }
-                self.showLoadMore = false
-                self.boxes = []
-            }
+            await setBoxes([])
+            await setShowLoadMore(false)
             await self.loadBoxes()
         }
     }
@@ -42,15 +39,30 @@ class MyBoxesViewModel: AuthContainerViewModel {
     private func loadBoxes() async {
         do {
             let response = try await apiService.getMeBoxes(wishlist: false, page: currentPage)
-            DispatchQueue.main.async { [weak self] in
-                guard let self else { return }
-                self.showLoadMore = false
-                self.boxes.append(contentsOf: response.data)
-                self.total = 5
-                self.showLoadMore = false
-            }
+            await addBoxes(response.data)
+            await setShowLoadMore(false)
+            await setTotal(response.meta.total)
         } catch {
             self.managerError(error: error)
         }
+    }
+}
+
+extension MyBoxesViewModel {
+    
+    @MainActor private func addBoxes(_ items: [LightBox]) {
+        boxes.append(contentsOf: items)
+    }
+    
+    @MainActor private func setBoxes(_ items: [LightBox]) {
+        boxes = items
+    }
+
+    @MainActor private func setShowLoadMore(_ value: Bool) {
+        showLoadMore = value
+    }
+    
+    @MainActor private func setTotal(_ value: Int) {
+        total = value
     }
 }

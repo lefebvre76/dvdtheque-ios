@@ -13,15 +13,25 @@ class AuthContainerViewModel: ObservableObject {
     public var apiService = DvdthequeApiService()
 
     func userIsLogged() {
-        self.showAuthView = false
+        Task {
+            await setShowAuthView(false)
+        }
     }
     
     func managerError(error: Error) {
         switch error {
         case ApiService.ApiError.unauthorized:
-            self.showAuthView = true
+            Task {
+                await setShowAuthView(true)
+            }
         default:
             print(error)
         }
+    }
+}
+
+extension AuthContainerViewModel {
+    @MainActor private func setShowAuthView(_ value: Bool) {
+        showAuthView = value
     }
 }

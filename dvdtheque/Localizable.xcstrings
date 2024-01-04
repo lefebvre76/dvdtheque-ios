@@ -152,6 +152,22 @@
         }
       }
     },
+    "button.loading" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Loading"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Chargement"
+          }
+        }
+      }
+    },
     "button.login" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -182,6 +198,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Déconnexion"
+          }
+        }
+      }
+    },
+    "general.error" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "An error has occurred"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Une erreur est survenue"
           }
         }
       }
@@ -261,7 +294,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Vos acteurs favoris"
+            "value" : "Vos réalisateurs favoris"
           }
         }
       }
