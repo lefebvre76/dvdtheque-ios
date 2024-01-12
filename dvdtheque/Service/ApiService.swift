@@ -22,6 +22,7 @@ class ApiService {
     enum Method: String {
         case get = "GET"
         case post = "POST"
+        case put = "PUT"
     }
 
     func call(url: URL, httpMethod: Method = .get, parameters: [String: Any]? = nil, withBearerToken: Bool = true) async throws -> (Data, URLResponse) {

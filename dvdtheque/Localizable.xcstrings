@@ -202,6 +202,22 @@
         }
       }
     },
+    "button.save" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Save"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Enregistrer"
+          }
+        }
+      }
+    },
     "general.error" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -365,6 +381,40 @@
         }
       }
     },
+    "user.new_password" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "New password"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Nouveau mot de passe"
+          }
+        }
+      }
+    },
+    "user.new_password_confirmation" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Confirmation"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Confirmation"
+          }
+        }
+      }
+    },
     "user.password" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -378,6 +428,38 @@
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Mot de passe"
+          }
+        }
+      }
+    },
+    "user.profil" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "My profil"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mon compte"
+          }
+        }
+      }
+    },
+    "user.update_password" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Update password"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Modifier mon mot de passe"
           }
         }
       }

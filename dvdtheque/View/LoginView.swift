@@ -18,27 +18,11 @@ struct LoginView: View {
                 .padding(.top)
             Spacer()
             VStack {
-                TextField(
-                    "user.mail",
-                    text: $loginViewModel.email
-                )
-                .autocapitalization(.none)
-                .disableAutocorrection(true)
-                .padding(.top, 20)
-                
-                Divider()
-                
-                SecureField(
-                    "user.password",
-                    text: $loginViewModel.password
-                )
-                .padding(.top, 20)
-                
-                Divider()
+                TextFieldError(text: $loginViewModel.email, placeholder: "user.mail", errors: [])
+
+                TextFieldError(text: $loginViewModel.password, placeholder: "user.password", errors: loginViewModel.errorMessages, securised: true)
             }
-            if let message = loginViewModel.errorMessage {
-                Text("\(message)").multilineTextAlignment(.center).foregroundColor(.red).padding(.vertical)
-            }
+
             Button(
                 action: loginViewModel.auth,
                 label: {

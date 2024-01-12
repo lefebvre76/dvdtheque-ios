@@ -65,6 +65,12 @@ class DvdthequeApiService: ApiService {
         return decoded
     }
     
+    func updateUserInformations(parameters: [String: Any]) async throws -> User {
+        let (data, _) = try await self.call(url: Endpoint.me.absoluteURL, httpMethod: .put, parameters: parameters)
+        let decoded = try JSONDecoder().decode(User.self, from: data)
+        return decoded
+    }
+    
     func logout() async throws {
         let (_, _) = try await self.call(url: Endpoint.logout.absoluteURL, httpMethod: .post)
     }

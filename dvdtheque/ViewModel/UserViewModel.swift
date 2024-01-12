@@ -10,6 +10,7 @@ import Foundation
 class UserViewModel: AuthContainerViewModel {
 
     @Published public var user: User?
+    @Published public var editionPagePresented = false
 
     private var persistance = Persistance()
     
@@ -39,6 +40,28 @@ class UserViewModel: AuthContainerViewModel {
                 self.managerError(error: error)
             }
         }
+    }
+    
+    public func showEditionPage() {
+        Task {
+            await setEditionPagePresented(true)
+        }
+    }
+
+    public func hideEditionPage() {
+        Task {
+            await setEditionPagePresented(false)
+        }
+    }
+
+    public func updateUser(user: User) {
+        Task {
+            await setUser(user)
+        }
+    }
+    
+    @MainActor private func setEditionPagePresented(_ value: Bool) {
+        editionPagePresented = value
     }
     
     @MainActor private func setShowAuthView(_ value: Bool) {

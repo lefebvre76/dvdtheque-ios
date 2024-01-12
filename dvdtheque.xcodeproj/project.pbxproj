@@ -37,6 +37,9 @@
 		D74495992B32DB890061B338 /* BoxDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74495982B32DB890061B338 /* BoxDetailView.swift */; };
 		D744959B2B32DFDD0061B338 /* Celebrity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D744959A2B32DFDD0061B338 /* Celebrity.swift */; };
 		D744959D2B32DFE60061B338 /* Kind.swift in Sources */ = {isa = PBXBuildFile; fileRef = D744959C2B32DFE60061B338 /* Kind.swift */; };
+		D76ABCE42B5137B60016105B /* UserEditionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76ABCE32B5137B60016105B /* UserEditionView.swift */; };
+		D76ABCE62B5174010016105B /* UserEditionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76ABCE52B5174010016105B /* UserEditionViewModel.swift */; };
+		D76ABCE82B51849B0016105B /* TextFieldError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76ABCE72B51849B0016105B /* TextFieldError.swift */; };
 		D7C125B12B3203FA00245B5D /* CelebrityItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C125B02B3203FA00245B5D /* CelebrityItemView.swift */; };
 		D7C125B32B32081100245B5D /* KindItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C125B22B32081100245B5D /* KindItemView.swift */; };
 /* End PBXBuildFile section */
@@ -72,6 +75,9 @@
 		D74495982B32DB890061B338 /* BoxDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxDetailView.swift; sourceTree = "<group>"; };
 		D744959A2B32DFDD0061B338 /* Celebrity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Celebrity.swift; sourceTree = "<group>"; };
 		D744959C2B32DFE60061B338 /* Kind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kind.swift; sourceTree = "<group>"; };
+		D76ABCE32B5137B60016105B /* UserEditionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEditionView.swift; sourceTree = "<group>"; };
+		D76ABCE52B5174010016105B /* UserEditionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEditionViewModel.swift; sourceTree = "<group>"; };
+		D76ABCE72B51849B0016105B /* TextFieldError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldError.swift; sourceTree = "<group>"; };
 		D7C125B02B3203FA00245B5D /* CelebrityItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelebrityItemView.swift; sourceTree = "<group>"; };
 		D7C125B22B32081100245B5D /* KindItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KindItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -152,6 +158,7 @@
 				D7358C902B309D820049FF72 /* UserView.swift */,
 				D7358C952B30B35B0049FF72 /* AuthContainerView.swift */,
 				D74495922B32D5E90061B338 /* BoxView.swift */,
+				D76ABCE32B5137B60016105B /* UserEditionView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -164,6 +171,7 @@
 				D7358C922B309DB20049FF72 /* UserViewModel.swift */,
 				D7358C972B30B4000049FF72 /* AuthContainerViewModel.swift */,
 				D74495942B32D60C0061B338 /* BoxViewDetail.swift */,
+				D76ABCE52B5174010016105B /* UserEditionViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -186,6 +194,7 @@
 				D7C125B02B3203FA00245B5D /* CelebrityItemView.swift */,
 				D7C125B22B32081100245B5D /* KindItemView.swift */,
 				D74495982B32DB890061B338 /* BoxDetailView.swift */,
+				D76ABCE72B51849B0016105B /* TextFieldError.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -276,7 +285,9 @@
 				D70F791E2B2C5787004F862A /* Illustration.swift in Sources */,
 				D74495952B32D60C0061B338 /* BoxViewDetail.swift in Sources */,
 				D7C125B32B32081100245B5D /* KindItemView.swift in Sources */,
+				D76ABCE42B5137B60016105B /* UserEditionView.swift in Sources */,
 				D70F791C2B2C56B2004F862A /* LightBox.swift in Sources */,
+				D76ABCE82B51849B0016105B /* TextFieldError.swift in Sources */,
 				D7358C962B30B35B0049FF72 /* AuthContainerView.swift in Sources */,
 				D70F790F2B2C55A0004F862A /* Persistence.swift in Sources */,
 				D7358C9A2B30B83D0049FF72 /* User.swift in Sources */,
@@ -291,6 +302,7 @@
 				D70F79062B2C559F004F862A /* dvdthequeApp.swift in Sources */,
 				D7358C862B307F600049FF72 /* LoginView.swift in Sources */,
 				D7358C932B309DB20049FF72 /* UserViewModel.swift in Sources */,
+				D76ABCE62B5174010016105B /* UserEditionViewModel.swift in Sources */,
 				D744959B2B32DFDD0061B338 /* Celebrity.swift in Sources */,
 				D74495932B32D5E90061B338 /* BoxView.swift in Sources */,
 				D7C125B12B3203FA00245B5D /* CelebrityItemView.swift in Sources */,
@@ -426,9 +438,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"dvdtheque/Preview Content\"";
+				DEVELOPMENT_TEAM = FST8XV4KMV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -443,6 +457,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.loic-lefebvre.dvdtheque";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -454,9 +469,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"dvdtheque/Preview Content\"";
+				DEVELOPMENT_TEAM = FST8XV4KMV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -471,6 +488,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.loic-lefebvre.dvdtheque";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

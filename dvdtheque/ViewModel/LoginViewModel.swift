@@ -13,7 +13,7 @@ class LoginViewModel: ObservableObject {
 
     @Published public var email: String = ""
     @Published public var password: String = ""
-    @Published public var errorMessage: String?
+    @Published public var errorMessages: [String] = []
     @Published public var load: Bool = false
 
     private var apiService = DvdthequeApiService()
@@ -31,7 +31,7 @@ class LoginViewModel: ObservableObject {
     
     func auth() {
         Task {
-            await setErrorMessage(nil)
+            await setErrorMessage([])
             await setLoad(true)
             do {
                 let response = try await apiService.auth(email: email, password: password)
@@ -41,13 +41,13 @@ class LoginViewModel: ObservableObject {
                 self.completion?()
             } catch ApiService.ApiError.unprocessableEntity(let errors) {
                 if let message = errors["message"] as? String {
-                    await setErrorMessage(message)
+                    await setErrorMessage([message])
                 } else {
-                    await setErrorMessage("general.error".localized())
+                    await setErrorMessage(["general.error".localized()])
                 }
                 await setLoad(false)
             } catch {
-                await setErrorMessage("general.error".localized())
+                await setErrorMessage(["general.error".localized()])
                 await setLoad(false)
             }
         }
@@ -59,8 +59,8 @@ extension LoginViewModel {
         email = value
     }
     
-    @MainActor private func setErrorMessage(_ value: String?) {
-        errorMessage = value
+    @MainActor private func setErrorMessage(_ value: [String]) {
+        errorMessages = value
     }
     
     @MainActor private func setLoad(_ value: Bool) {
