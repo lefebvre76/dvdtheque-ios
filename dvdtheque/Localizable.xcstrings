@@ -56,6 +56,38 @@
         }
       }
     },
+    "box.addToCollection" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add to my DVDs"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Ajouter à ma collection"
+          }
+        }
+      }
+    },
+    "box.addToWishlist" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add to my Wishlist"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Ajouter à ma wishlist"
+          }
+        }
+      }
+    },
     "box.composer" : {
       "localizations" : {
         "en" : {
@@ -267,18 +299,34 @@
         }
       }
     },
-    "menu.boxes" : {
+    "menu.add" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "DVD"
+            "value" : "Scan"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "DVD"
+            "value" : "Scanner"
+          }
+        }
+      }
+    },
+    "menu.boxes" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "My DVDs"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Ma collection"
           }
         }
       }

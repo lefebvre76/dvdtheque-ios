@@ -42,6 +42,12 @@
 		D76ABCE82B51849B0016105B /* TextFieldError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76ABCE72B51849B0016105B /* TextFieldError.swift */; };
 		D7C125B12B3203FA00245B5D /* CelebrityItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C125B02B3203FA00245B5D /* CelebrityItemView.swift */; };
 		D7C125B32B32081100245B5D /* KindItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C125B22B32081100245B5D /* KindItemView.swift */; };
+		D7FD1D642B567B5A00084E5F /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = D7FD1D632B567B5A00084E5F /* InfoPlist.xcstrings */; };
+		D7FD1D662B567BA800084E5F /* BarCodeScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FD1D652B567BA800084E5F /* BarCodeScannerView.swift */; };
+		D7FD1D6F2B56F0F900084E5F /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = D7FD1D6E2B56F0F900084E5F /* CodeScanner */; };
+		D7FD1D712B56F3CD00084E5F /* BarCodeScannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FD1D702B56F3CD00084E5F /* BarCodeScannerViewModel.swift */; };
+		D7FD1D732B56FB7E00084E5F /* ScannedBoxViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FD1D722B56FB7E00084E5F /* ScannedBoxViewModel.swift */; };
+		D7FD1D752B56FB8700084E5F /* ScannedBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FD1D742B56FB8700084E5F /* ScannedBoxView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +86,12 @@
 		D76ABCE72B51849B0016105B /* TextFieldError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldError.swift; sourceTree = "<group>"; };
 		D7C125B02B3203FA00245B5D /* CelebrityItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelebrityItemView.swift; sourceTree = "<group>"; };
 		D7C125B22B32081100245B5D /* KindItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KindItemView.swift; sourceTree = "<group>"; };
+		D7FD1D622B5679DE00084E5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		D7FD1D632B567B5A00084E5F /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
+		D7FD1D652B567BA800084E5F /* BarCodeScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarCodeScannerView.swift; sourceTree = "<group>"; };
+		D7FD1D702B56F3CD00084E5F /* BarCodeScannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarCodeScannerViewModel.swift; sourceTree = "<group>"; };
+		D7FD1D722B56FB7E00084E5F /* ScannedBoxViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannedBoxViewModel.swift; sourceTree = "<group>"; };
+		D7FD1D742B56FB8700084E5F /* ScannedBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannedBoxView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7FD1D6F2B56F0F900084E5F /* CodeScanner in Frameworks */,
 				D7358C8F2B3095CF0049FF72 /* lefebvre76-utilities in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -97,6 +110,7 @@
 		D70F78F92B2C559F004F862A = {
 			isa = PBXGroup;
 			children = (
+				D7FD1D632B567B5A00084E5F /* InfoPlist.xcstrings */,
 				D70F79042B2C559F004F862A /* dvdtheque */,
 				D70F79032B2C559F004F862A /* Products */,
 			);
@@ -113,6 +127,7 @@
 		D70F79042B2C559F004F862A /* dvdtheque */ = {
 			isa = PBXGroup;
 			children = (
+				D7FD1D622B5679DE00084E5F /* Info.plist */,
 				D70F791F2B2C585D004F862A /* Service */,
 				D70F791A2B2C5698004F862A /* ViewModel */,
 				D70F79192B2C5692004F862A /* View */,
@@ -159,6 +174,8 @@
 				D7358C952B30B35B0049FF72 /* AuthContainerView.swift */,
 				D74495922B32D5E90061B338 /* BoxView.swift */,
 				D76ABCE32B5137B60016105B /* UserEditionView.swift */,
+				D7FD1D652B567BA800084E5F /* BarCodeScannerView.swift */,
+				D7FD1D742B56FB8700084E5F /* ScannedBoxView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -172,6 +189,8 @@
 				D7358C972B30B4000049FF72 /* AuthContainerViewModel.swift */,
 				D74495942B32D60C0061B338 /* BoxViewDetail.swift */,
 				D76ABCE52B5174010016105B /* UserEditionViewModel.swift */,
+				D7FD1D702B56F3CD00084E5F /* BarCodeScannerViewModel.swift */,
+				D7FD1D722B56FB7E00084E5F /* ScannedBoxViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -217,6 +236,7 @@
 			name = dvdtheque;
 			packageProductDependencies = (
 				D7358C8E2B3095CF0049FF72 /* lefebvre76-utilities */,
+				D7FD1D6E2B56F0F900084E5F /* CodeScanner */,
 			);
 			productName = dvdtheque;
 			productReference = D70F79022B2C559F004F862A /* dvdtheque.app */;
@@ -249,6 +269,7 @@
 			mainGroup = D70F78F92B2C559F004F862A;
 			packageReferences = (
 				D7358C8D2B3095CF0049FF72 /* XCRemoteSwiftPackageReference "swift-utilities" */,
+				D7FD1D6D2B56F0F800084E5F /* XCRemoteSwiftPackageReference "CodeScanner" */,
 			);
 			productRefGroup = D70F79032B2C559F004F862A /* Products */;
 			projectDirPath = "";
@@ -266,6 +287,7 @@
 			files = (
 				D70F790D2B2C55A0004F862A /* Preview Assets.xcassets in Resources */,
 				D70F790A2B2C55A0004F862A /* Assets.xcassets in Resources */,
+				D7FD1D642B567B5A00084E5F /* InfoPlist.xcstrings in Resources */,
 				D7358C8C2B30923B0049FF72 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,6 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7358C842B307CE00049FF72 /* LoadView.swift in Sources */,
+				D7FD1D752B56FB8700084E5F /* ScannedBoxView.swift in Sources */,
 				D70F79212B2C586D004F862A /* DvdthequeApiService.swift in Sources */,
 				D70F79122B2C55A0004F862A /* dvdtheque.xcdatamodeld in Sources */,
 				D74495992B32DB890061B338 /* BoxDetailView.swift in Sources */,
@@ -285,6 +308,7 @@
 				D70F791E2B2C5787004F862A /* Illustration.swift in Sources */,
 				D74495952B32D60C0061B338 /* BoxViewDetail.swift in Sources */,
 				D7C125B32B32081100245B5D /* KindItemView.swift in Sources */,
+				D7FD1D662B567BA800084E5F /* BarCodeScannerView.swift in Sources */,
 				D76ABCE42B5137B60016105B /* UserEditionView.swift in Sources */,
 				D70F791C2B2C56B2004F862A /* LightBox.swift in Sources */,
 				D76ABCE82B51849B0016105B /* TextFieldError.swift in Sources */,
@@ -305,8 +329,10 @@
 				D76ABCE62B5174010016105B /* UserEditionViewModel.swift in Sources */,
 				D744959B2B32DFDD0061B338 /* Celebrity.swift in Sources */,
 				D74495932B32D5E90061B338 /* BoxView.swift in Sources */,
+				D7FD1D712B56F3CD00084E5F /* BarCodeScannerViewModel.swift in Sources */,
 				D7C125B12B3203FA00245B5D /* CelebrityItemView.swift in Sources */,
 				D7358C7B2B303CF60049FF72 /* MyBoxesView.swift in Sources */,
+				D7FD1D732B56FB7E00084E5F /* ScannedBoxViewModel.swift in Sources */,
 				D7358C7D2B303D4A0049FF72 /* MyBoxesViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -445,6 +471,8 @@
 				DEVELOPMENT_TEAM = FST8XV4KMV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = dvdtheque/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -476,6 +504,8 @@
 				DEVELOPMENT_TEAM = FST8XV4KMV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = dvdtheque/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -527,6 +557,14 @@
 				kind = branch;
 			};
 		};
+		D7FD1D6D2B56F0F800084E5F /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/CodeScanner";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -534,6 +572,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D7358C8D2B3095CF0049FF72 /* XCRemoteSwiftPackageReference "swift-utilities" */;
 			productName = "lefebvre76-utilities";
+		};
+		D7FD1D6E2B56F0F900084E5F /* CodeScanner */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D7FD1D6D2B56F0F800084E5F /* XCRemoteSwiftPackageReference "CodeScanner" */;
+			productName = CodeScanner;
 		};
 /* End XCSwiftPackageProductDependency section */
 

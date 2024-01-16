@@ -21,6 +21,9 @@ struct ContentView: View {
             MyBoxesView().tabItem {
                 Label("menu.boxes", systemImage: "opticaldisc.fill")
             }
+            BarCodeScannerView().tabItem {
+                Label("menu.add", systemImage: "barcode.viewfinder")
+            }
             UserView().tabItem {
                 Label("menu.account", systemImage: "person.crop.circle")
             }

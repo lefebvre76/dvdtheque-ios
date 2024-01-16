@@ -15,7 +15,9 @@ struct BoxDetailView: View {
         ZStack(alignment: Alignment(horizontal: .center, vertical: .top)) {
             HStack {
                 AsyncImage(url: URL(string: box.illustration.original), content: { image in
-                    image.frame(height: 200)
+                    image.frame(height: 250)
+                        .scaledToFill()
+                        .clipped()
                 },
                            placeholder: {
                     HStack {
