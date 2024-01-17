@@ -9,12 +9,17 @@ import SwiftUI
 import CoreData
 
 struct MyBoxesView: View {
-    @StateObject var myBoxesViewModel = MyBoxesViewModel()
+    @StateObject var myBoxesViewModel: MyBoxesViewModel
 
     var body: some View {
         AuthContainerView(authContainerViewModel: myBoxesViewModel) {
             NavigationStack {
                 List {
+                    if myBoxesViewModel.boxes.isEmpty, !myBoxesViewModel.loading {
+                        Text(myBoxesViewModel.isWishlist ? "wishlist.is_empty" : "boxes.is_empty")
+                            .listRowSeparator(.hidden,
+                                              edges: .all)
+                    }
                     ForEach(myBoxesViewModel.boxes, id: \.id) { box in
                         NavigationLink(destination: BoxView(boxViewModel: BoxViewModel(lightBox: box))) {
                             BoxItemView(box: box).swipeActions {
@@ -31,7 +36,7 @@ struct MyBoxesView: View {
                                 } label: {
                                     Image(systemName: "plus")
                                         .font(.system(size: 20))
-                                    Text("menu.wishlist")
+                                    Text(myBoxesViewModel.isWishlist ? "menu.boxes" : "menu.wishlist")
                                 }
                             }
                         }
@@ -45,7 +50,7 @@ struct MyBoxesView: View {
                     }
                 }
                 .listStyle(.plain)
-                .navigationTitle("boxes.list")
+                .navigationTitle(myBoxesViewModel.isWishlist ? "menu.wishlist" : "menu.boxes")
                 .onAppear() {
                     myBoxesViewModel.loadData()
                 }
@@ -66,5 +71,5 @@ struct MyBoxesView: View {
 }
 
 #Preview {
-    MyBoxesView()
+    MyBoxesView(myBoxesViewModel: MyBoxesViewModel())
 }

@@ -9,6 +9,8 @@ import Foundation
 
 class MyBoxesViewModel: AuthContainerViewModel {
 
+    public var isWishlist: Bool
+    
     @Published public var boxes: [LightBox] = []
     @Published public var total: Int = 0
     @Published public var showLoadMore = false
@@ -16,6 +18,10 @@ class MyBoxesViewModel: AuthContainerViewModel {
     @Published public var showingDeleteAlert = false
 
     private var currentPage = 1
+    
+    init(isWishlist: Bool = false) {
+        self.isWishlist = isWishlist
+    }
     
     override func userIsLogged() {
         super.userIsLogged()
@@ -43,7 +49,7 @@ class MyBoxesViewModel: AuthContainerViewModel {
         Task {
             do {
                 showLoading(value: true)
-                _ = try await apiService.postMyBoxes(id: box.id, wishlist: true)
+                _ = try await apiService.postMyBoxes(id: box.id, wishlist: !isWishlist)
                 await removeBox(box)
             } catch {
                 self.managerError(error: error)
@@ -77,7 +83,7 @@ class MyBoxesViewModel: AuthContainerViewModel {
     
     private func loadBoxes() async {
         do {
-            let response = try await apiService.getMeBoxes(wishlist: false, page: currentPage)
+            let response = try await apiService.getMeBoxes(wishlist: isWishlist, page: currentPage)
             await addBoxes(response.data)
             await setShowLoadMore(false)
             await setTotal(response.meta.total)

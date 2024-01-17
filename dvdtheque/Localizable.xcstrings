@@ -219,18 +219,13 @@
         }
       }
     },
-    "boxes.list" : {
+    "boxes.is_empty" : {
+      "extractionState" : "manual",
       "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "My collection"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ma collection"
+            "value" : "Votre collection est vide. Cliquer sur Scanner pour ajouter des produits."
           }
         }
       }
@@ -627,6 +622,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Modifier mon mot de passe"
+          }
+        }
+      }
+    },
+    "wishlist.is_empty" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Votre wishlist est vide. Cliquer sur Scanner pour ajouter des produits."
           }
         }
       }

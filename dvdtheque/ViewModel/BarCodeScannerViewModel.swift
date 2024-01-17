@@ -16,6 +16,11 @@ class BarCodeScannerViewModel: AuthContainerViewModel {
     @Published public var foundedBox: Box?
     @Published public var scanMode: ScanMode = ScanMode.continuous
     
+    override init() {
+        super.init()
+        showLoading(value: false)
+    }
+    
     func barCodeFound(response: Result<ScanResult, ScanError>) {
         if case let .success(result) = response {
             searchMovie(barCode: result.string)

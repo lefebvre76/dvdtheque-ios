@@ -18,11 +18,14 @@ struct ContentView: View {
 
     var body: some View {
         TabView {
-            MyBoxesView().tabItem {
+            MyBoxesView(myBoxesViewModel: MyBoxesViewModel()).tabItem {
                 Label("menu.boxes", systemImage: "opticaldisc.fill")
             }
             BarCodeScannerView().tabItem {
                 Label("menu.add", systemImage: "barcode.viewfinder")
+            }
+            MyBoxesView(myBoxesViewModel: MyBoxesViewModel(isWishlist: true)).tabItem {
+                Label("menu.wishlist", systemImage: "heart")
             }
             UserView().tabItem {
                 Label("menu.account", systemImage: "person.crop.circle")

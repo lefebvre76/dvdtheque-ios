@@ -25,7 +25,6 @@
 		D7358C882B307FAE0049FF72 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7358C872B307FAE0049FF72 /* LoginViewModel.swift */; };
 		D7358C8A2B308C800049FF72 /* Persistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7358C892B308C800049FF72 /* Persistance.swift */; };
 		D7358C8C2B30923B0049FF72 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = D7358C8B2B30923B0049FF72 /* Localizable.xcstrings */; };
-		D7358C8F2B3095CF0049FF72 /* lefebvre76-utilities in Frameworks */ = {isa = PBXBuildFile; productRef = D7358C8E2B3095CF0049FF72 /* lefebvre76-utilities */; };
 		D7358C912B309D820049FF72 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7358C902B309D820049FF72 /* UserView.swift */; };
 		D7358C932B309DB20049FF72 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7358C922B309DB20049FF72 /* UserViewModel.swift */; };
 		D7358C962B30B35B0049FF72 /* AuthContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7358C952B30B35B0049FF72 /* AuthContainerView.swift */; };
@@ -41,6 +40,7 @@
 		D76ABCE62B5174010016105B /* UserEditionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76ABCE52B5174010016105B /* UserEditionViewModel.swift */; };
 		D76ABCE82B51849B0016105B /* TextFieldError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76ABCE72B51849B0016105B /* TextFieldError.swift */; };
 		D76F9C292B57E46100C3B04D /* AlertToast in Frameworks */ = {isa = PBXBuildFile; productRef = D76F9C282B57E46100C3B04D /* AlertToast */; };
+		D76F9C302B58535000C3B04D /* lefebvre76-utilities in Frameworks */ = {isa = PBXBuildFile; productRef = D76F9C2F2B58535000C3B04D /* lefebvre76-utilities */; };
 		D7C125B12B3203FA00245B5D /* CelebrityItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C125B02B3203FA00245B5D /* CelebrityItemView.swift */; };
 		D7C125B32B32081100245B5D /* KindItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C125B22B32081100245B5D /* KindItemView.swift */; };
 		D7FD1D642B567B5A00084E5F /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = D7FD1D632B567B5A00084E5F /* InfoPlist.xcstrings */; };
@@ -101,8 +101,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D76F9C292B57E46100C3B04D /* AlertToast in Frameworks */,
+				D76F9C302B58535000C3B04D /* lefebvre76-utilities in Frameworks */,
 				D7FD1D6F2B56F0F900084E5F /* CodeScanner in Frameworks */,
-				D7358C8F2B3095CF0049FF72 /* lefebvre76-utilities in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,9 +237,9 @@
 			);
 			name = dvdtheque;
 			packageProductDependencies = (
-				D7358C8E2B3095CF0049FF72 /* lefebvre76-utilities */,
 				D7FD1D6E2B56F0F900084E5F /* CodeScanner */,
 				D76F9C282B57E46100C3B04D /* AlertToast */,
+				D76F9C2F2B58535000C3B04D /* lefebvre76-utilities */,
 			);
 			productName = dvdtheque;
 			productReference = D70F79022B2C559F004F862A /* dvdtheque.app */;
@@ -271,9 +271,9 @@
 			);
 			mainGroup = D70F78F92B2C559F004F862A;
 			packageReferences = (
-				D7358C8D2B3095CF0049FF72 /* XCRemoteSwiftPackageReference "swift-utilities" */,
 				D7FD1D6D2B56F0F800084E5F /* XCRemoteSwiftPackageReference "CodeScanner" */,
 				D76F9C272B57E46100C3B04D /* XCRemoteSwiftPackageReference "AlertToast" */,
+				D76F9C2E2B58535000C3B04D /* XCRemoteSwiftPackageReference "swift-utilities" */,
 			);
 			productRefGroup = D70F79032B2C559F004F862A /* Products */;
 			projectDirPath = "";
@@ -553,20 +553,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		D7358C8D2B3095CF0049FF72 /* XCRemoteSwiftPackageReference "swift-utilities" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/lefebvre76/swift-utilities";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
 		D76F9C272B57E46100C3B04D /* XCRemoteSwiftPackageReference "AlertToast" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/elai950/AlertToast.git";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 1.3.9;
+			};
+		};
+		D76F9C2E2B58535000C3B04D /* XCRemoteSwiftPackageReference "swift-utilities" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/lefebvre76/swift-utilities";
+			requirement = {
+				branch = main;
+				kind = branch;
 			};
 		};
 		D7FD1D6D2B56F0F800084E5F /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
@@ -580,15 +580,15 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		D7358C8E2B3095CF0049FF72 /* lefebvre76-utilities */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = D7358C8D2B3095CF0049FF72 /* XCRemoteSwiftPackageReference "swift-utilities" */;
-			productName = "lefebvre76-utilities";
-		};
 		D76F9C282B57E46100C3B04D /* AlertToast */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = D76F9C272B57E46100C3B04D /* XCRemoteSwiftPackageReference "AlertToast" */;
 			productName = AlertToast;
+		};
+		D76F9C2F2B58535000C3B04D /* lefebvre76-utilities */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D76F9C2E2B58535000C3B04D /* XCRemoteSwiftPackageReference "swift-utilities" */;
+			productName = "lefebvre76-utilities";
 		};
 		D7FD1D6E2B56F0F900084E5F /* CodeScanner */ = {
 			isa = XCSwiftPackageProductDependency;

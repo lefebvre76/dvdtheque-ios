@@ -15,7 +15,7 @@ class AuthContainerViewModel: ObservableObject {
     @Published public var toastTitle: String?
     @Published public var toastMessage: String?
 
-    @Published public var loading = false
+    @Published public var loading = true
 
     public var apiService = DvdthequeApiService()
 
