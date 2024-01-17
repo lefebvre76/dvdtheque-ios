@@ -56,7 +56,39 @@
         }
       }
     },
-    "box.addedToCollection" : {
+    "box.add_to_collection" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add to my DVDs"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajouter à ma collection"
+          }
+        }
+      }
+    },
+    "box.add_to_wishlist" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add to my Wishlist"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajouter à ma wishlist"
+          }
+        }
+      }
+    },
+    "box.added_to_collection" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -73,7 +105,7 @@
         }
       }
     },
-    "box.addedToWishlist" : {
+    "box.added_to_wishlist" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -86,38 +118,6 @@
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "\"%@\" ajouté à ma wishlist"
-          }
-        }
-      }
-    },
-    "box.addToCollection" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Add to my DVDs"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Ajouter à ma collection"
-          }
-        }
-      }
-    },
-    "box.addToWishlist" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Add to my Wishlist"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Ajouter à ma wishlist"
           }
         }
       }
@@ -150,6 +150,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Musique"
+          }
+        }
+      }
+    },
+    "box.delete_confirmation" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete \"%@\" to my DVDs ?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Supprimer \"%@\" de ma collection ?"
           }
         }
       }
@@ -284,6 +301,23 @@
         }
       }
     },
+    "general.delete" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Supprimer"
+          }
+        }
+      }
+    },
     "general.error" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -361,6 +395,23 @@
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Ma collection"
+          }
+        }
+      }
+    },
+    "menu.wishlist" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wishlist"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wishlist"
           }
         }
       }

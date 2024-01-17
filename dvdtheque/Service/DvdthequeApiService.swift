@@ -108,4 +108,8 @@ class DvdthequeApiService: ApiService {
         let decoded = try JSONDecoder().decode(Box.self, from: data)
         return decoded
     }
+    
+    func deleteMyBoxes(id: Int) async throws {
+        let (_, _) = try await self.call(url: Endpoint.setMyBoxes(id: id).absoluteURL, httpMethod: .delete)
+    }
 }

@@ -35,14 +35,14 @@ struct ScannedBoxView: View {
                     }, label: {
                         Image(systemName: "plus")
                             .font(.system(size: 20))
-                        Text("box.addToCollection").padding()
+                        Text("box.add_to_collection").padding()
                     })
                     Button(action: {
                         scannedBoxViewModel.add(wishlist: true)
                     }, label: {
                         Image(systemName: "plus")
                             .font(.system(size: 20))
-                        Text("box.addToWishlist").padding()
+                        Text("box.add_to_wishlist").padding()
                     })
                 }
             }

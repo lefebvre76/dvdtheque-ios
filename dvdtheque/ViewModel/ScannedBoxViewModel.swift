@@ -32,7 +32,7 @@ extension ScannedBoxViewModel {
         Task {
             do {
                 _ = try await apiService.postMyBoxes(id: id, wishlist: wishlist)
-                close(message: wishlist ? "box.addedToWishlist".localized(arguments: box.title) : "box.addedToCollection".localized(arguments: box.title))
+                close(message: wishlist ? "box.added_to_wishlist".localized(arguments: box.title) : "box.added_to_tollection".localized(arguments: box.title))
             } catch {
                 self.managerError(error: error)
             }

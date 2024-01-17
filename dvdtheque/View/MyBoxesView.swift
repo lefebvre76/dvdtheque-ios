@@ -17,7 +17,23 @@ struct MyBoxesView: View {
                 List {
                     ForEach(myBoxesViewModel.boxes, id: \.id) { box in
                         NavigationLink(destination: BoxView(boxViewModel: BoxViewModel(lightBox: box))) {
-                            BoxItemView(box: box)
+                            BoxItemView(box: box).swipeActions {
+                                Button {
+                                    myBoxesViewModel.launchDeleteItem(box: box)
+                                } label: {
+                                    Image(systemName: "trash")
+                                        .font(.system(size: 20))
+                                    Text("general.delete")
+                                }.tint(.red)
+                                
+                                Button {
+                                    myBoxesViewModel.addToWishlist(box: box)
+                                } label: {
+                                    Image(systemName: "plus")
+                                        .font(.system(size: 20))
+                                    Text("menu.wishlist")
+                                }
+                            }
                         }
                     }
                     .listRowSeparator(.hidden,
@@ -32,6 +48,17 @@ struct MyBoxesView: View {
                 .navigationTitle("boxes.list")
                 .onAppear() {
                     myBoxesViewModel.loadData()
+                }
+                .confirmationDialog(
+                    Text("box.delete_confirmation".localized(arguments: "\(myBoxesViewModel.toBeDeleted?.title ?? "")")),
+                    isPresented: $myBoxesViewModel.showingDeleteAlert,
+                    titleVisibility: .visible
+                ) {
+                    Button("general.delete", role: .destructive) {
+                        withAnimation {
+                            myBoxesViewModel.deleteItem()
+                        }
+                    }
                 }
             }
         }
