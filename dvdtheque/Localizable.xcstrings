@@ -56,6 +56,40 @@
         }
       }
     },
+    "box.addedToCollection" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Item added to my DVDs"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Item ajouté à ma collection"
+          }
+        }
+      }
+    },
+    "box.addedToWishlist" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Item added to my Wishlist"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Item ajouté à ma wishlist"
+          }
+        }
+      }
+    },
     "box.addToCollection" : {
       "localizations" : {
         "en" : {

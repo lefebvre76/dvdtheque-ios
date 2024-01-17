@@ -6,12 +6,26 @@
 //
 
 import Foundation
+import AlertToast
 
 class AuthContainerViewModel: ObservableObject {
     @Published public var showAuthView = false
+    @Published public var showToast = false
+    @Published public var toastType: AlertToast.AlertType = .regular
+    @Published public var toastTitle: String?
+    @Published public var toastMessage: String?
 
     public var apiService = DvdthequeApiService()
 
+    func showToast(title: String, message: String? = nil, isError: Bool = false) {
+        Task {
+            await setToastType(isError ? .error(.red) : .regular)
+            await setToastTitle(title)
+            await setToastMessage(message)
+            await setShowToast(true)
+        }
+    }
+    
     func userIsLogged() {
         Task {
             await setShowAuthView(false)
@@ -33,5 +47,21 @@ class AuthContainerViewModel: ObservableObject {
 extension AuthContainerViewModel {
     @MainActor private func setShowAuthView(_ value: Bool) {
         showAuthView = value
+    }
+    
+    @MainActor private func setShowToast(_ value: Bool) {
+        showToast = value
+    }
+
+    @MainActor private func setToastType(_ value: AlertToast.AlertType) {
+        toastType = value
+    }
+    
+    @MainActor private func setToastTitle(_ value: String?) {
+        toastTitle = value
+    }
+
+    @MainActor private func setToastMessage(_ value: String?) {
+        toastMessage = value
     }
 }

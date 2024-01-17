@@ -33,6 +33,13 @@ class BarCodeScannerViewModel: AuthContainerViewModel {
             await setShowFoundedBox(false)
         }
     }
+
+    func showMessage(messageToShow: String? = nil) {
+        closeBoxDetails()
+        if let message = messageToShow {
+            self.showToast(title: message)
+        }
+    }
 }
 
 extension BarCodeScannerViewModel {
@@ -63,7 +70,6 @@ extension BarCodeScannerViewModel {
         }
     }
 }
-
 
 extension BarCodeScannerViewModel {
     

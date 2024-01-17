@@ -7,6 +7,7 @@
 
 import SwiftUI
 import CoreData
+import AlertToast
 
 struct AuthContainerView<Content: View>: View {
     @StateObject var authContainerViewModel: AuthContainerViewModel
@@ -25,6 +26,12 @@ struct AuthContainerView<Content: View>: View {
             LoginView(loginViewModel: LoginViewModel(completion: {
                 authContainerViewModel.userIsLogged()
             }))
+        }
+        .toast(isPresenting: $authContainerViewModel.showToast){
+            AlertToast(displayMode: .hud,
+                       type: authContainerViewModel.toastType,
+                       title: authContainerViewModel.toastTitle,
+                       subTitle: authContainerViewModel.toastMessage)
         }
     }
 }

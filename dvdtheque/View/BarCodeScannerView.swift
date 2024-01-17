@@ -66,7 +66,7 @@ struct BarCodeScannerView: View {
         .sheet(isPresented: $barCodeScannerViewModel.showFoundedBox, onDismiss: barCodeScannerViewModel.closeBoxDetails) {
             if let box = barCodeScannerViewModel.foundedBox {
                 ScannedBoxView(scannedBoxViewModel: ScannedBoxViewModel(box: box,
-                                                                        completion: barCodeScannerViewModel.closeBoxDetails))
+                                                                        completion: barCodeScannerViewModel.showMessage))
             }
         }
     }

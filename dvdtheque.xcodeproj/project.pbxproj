@@ -40,6 +40,7 @@
 		D76ABCE42B5137B60016105B /* UserEditionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76ABCE32B5137B60016105B /* UserEditionView.swift */; };
 		D76ABCE62B5174010016105B /* UserEditionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76ABCE52B5174010016105B /* UserEditionViewModel.swift */; };
 		D76ABCE82B51849B0016105B /* TextFieldError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76ABCE72B51849B0016105B /* TextFieldError.swift */; };
+		D76F9C292B57E46100C3B04D /* AlertToast in Frameworks */ = {isa = PBXBuildFile; productRef = D76F9C282B57E46100C3B04D /* AlertToast */; };
 		D7C125B12B3203FA00245B5D /* CelebrityItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C125B02B3203FA00245B5D /* CelebrityItemView.swift */; };
 		D7C125B32B32081100245B5D /* KindItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C125B22B32081100245B5D /* KindItemView.swift */; };
 		D7FD1D642B567B5A00084E5F /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = D7FD1D632B567B5A00084E5F /* InfoPlist.xcstrings */; };
@@ -99,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D76F9C292B57E46100C3B04D /* AlertToast in Frameworks */,
 				D7FD1D6F2B56F0F900084E5F /* CodeScanner in Frameworks */,
 				D7358C8F2B3095CF0049FF72 /* lefebvre76-utilities in Frameworks */,
 			);
@@ -237,6 +239,7 @@
 			packageProductDependencies = (
 				D7358C8E2B3095CF0049FF72 /* lefebvre76-utilities */,
 				D7FD1D6E2B56F0F900084E5F /* CodeScanner */,
+				D76F9C282B57E46100C3B04D /* AlertToast */,
 			);
 			productName = dvdtheque;
 			productReference = D70F79022B2C559F004F862A /* dvdtheque.app */;
@@ -270,6 +273,7 @@
 			packageReferences = (
 				D7358C8D2B3095CF0049FF72 /* XCRemoteSwiftPackageReference "swift-utilities" */,
 				D7FD1D6D2B56F0F800084E5F /* XCRemoteSwiftPackageReference "CodeScanner" */,
+				D76F9C272B57E46100C3B04D /* XCRemoteSwiftPackageReference "AlertToast" */,
 			);
 			productRefGroup = D70F79032B2C559F004F862A /* Products */;
 			projectDirPath = "";
@@ -557,6 +561,14 @@
 				kind = branch;
 			};
 		};
+		D76F9C272B57E46100C3B04D /* XCRemoteSwiftPackageReference "AlertToast" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/elai950/AlertToast.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.3.9;
+			};
+		};
 		D7FD1D6D2B56F0F800084E5F /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/twostraws/CodeScanner";
@@ -572,6 +584,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D7358C8D2B3095CF0049FF72 /* XCRemoteSwiftPackageReference "swift-utilities" */;
 			productName = "lefebvre76-utilities";
+		};
+		D76F9C282B57E46100C3B04D /* AlertToast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D76F9C272B57E46100C3B04D /* XCRemoteSwiftPackageReference "AlertToast" */;
+			productName = AlertToast;
 		};
 		D7FD1D6E2B56F0F900084E5F /* CodeScanner */ = {
 			isa = XCSwiftPackageProductDependency;

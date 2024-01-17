@@ -10,15 +10,15 @@ import Foundation
 class ScannedBoxViewModel: AuthContainerViewModel {
 
     public let box: Box
-    private var completion: (() -> Void)?
+    private var completion: ((String?) -> Void)?
     
-    init(box: Box, completion: (() -> Void)? = nil) {
+    init(box: Box, completion: ((String?) -> Void)? = nil) {
         self.box = box
         self.completion = completion
     }
     
-    func close() {
-        completion?()
+    func close(message: String? = nil) {
+        completion?(message)
     }
 
     func add(wishlist: Bool) {
@@ -31,6 +31,7 @@ extension ScannedBoxViewModel {
         Task {
             do {
                 _ = try await apiService.postMyBoxes(id: id, wishlist: wishlist)
+                close(message: wishlist ? "box.addedToWishlist" : "box.addedToCollection")
             } catch {
                 self.managerError(error: error)
             }
