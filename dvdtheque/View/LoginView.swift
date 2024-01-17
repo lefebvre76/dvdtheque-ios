@@ -28,6 +28,7 @@ struct LoginView: View {
                 label: {
                     if loginViewModel.load {
                         ProgressView().padding(.trailing, 5)
+                            .progressViewStyle(CircularProgressViewStyle(tint: .white))
                         Text("button.loading")
                     } else {
                         Text("button.login")

@@ -15,32 +15,52 @@ struct BarCodeScannerView: View {
     
     var body: some View {
         AuthContainerView(authContainerViewModel: barCodeScannerViewModel) {
-            ZStack(alignment: Alignment(horizontal: .trailing, vertical: .top)) {
+            ZStack() {
                 CodeScannerView(codeTypes: [.ean13],
                                 scanMode: barCodeScannerViewModel.scanMode,
                                 shouldVibrateOnSuccess: (!barCodeScannerViewModel.searchInProgress && !barCodeScannerViewModel.showFoundedBox),
                                 isTorchOn: barCodeScannerViewModel.isTorchOn,
                                 videoCaptureDevice: AVCaptureDevice.default(.builtInTrueDepthCamera, for: AVMediaType.video, position: .back),
                                 completion: barCodeScannerViewModel.barCodeFound)
-                Button(action: {
-                    barCodeScannerViewModel.toogleTorch()
-                }, label: {
-                    if barCodeScannerViewModel.isTorchOn {
-                        Image(systemName: "flashlight.slash.circle")
-                            .font(.system(size: 30))
-                            .padding()
-                            .foregroundColor(.white)
-                    } else {
-                        Image(systemName: "flashlight.on.circle")
-                            .font(.system(size: 30))
-                            .padding()
-                            .foregroundColor(.white)
+                VStack {
+                    HStack() {
+                        Spacer()
+                        Button(action: {
+                            barCodeScannerViewModel.toogleTorch()
+                        }, label: {
+                            if barCodeScannerViewModel.isTorchOn {
+                                Image(systemName: "flashlight.slash.circle")
+                                    .font(.system(size: 30))
+                                    .padding()
+                                    .foregroundColor(.white)
+                            } else {
+                                Image(systemName: "flashlight.on.circle")
+                                    .font(.system(size: 30))
+                                    .padding()
+                                    .foregroundColor(.white)
+                            }
+                        }).background {
+                            Color.black
+                                .blur(radius: 20, opaque: false)
+                                .opacity(0.7)
+                        }.padding()
                     }
-                }).background {
-                    Color.black
-                        .blur(radius: 20, opaque: false)
-                        .opacity(0.7)
-                }.padding()
+                    Spacer()
+                    HStack() {
+                        if barCodeScannerViewModel.searchInProgress {
+                            LoadView(font: .body, loaderColor: .black).padding()
+                        } else if let message = barCodeScannerViewModel.errorMessage {
+                            Text(message).padding().foregroundStyle(.red)
+                        } else {
+                            Text("scan.instruction").padding().foregroundStyle(.gray)
+                        }
+                    }.frame(maxWidth: .infinity)
+                    .background(
+                        RoundedRectangle(cornerRadius: 20).foregroundColor(.white)
+                            .shadow(color: .black, radius: 5, x: 0, y: 0)
+                    )
+                    .padding()
+                }
             }
         }
         .sheet(isPresented: $barCodeScannerViewModel.showFoundedBox, onDismiss: barCodeScannerViewModel.closeBoxDetails) {

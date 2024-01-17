@@ -44,6 +44,7 @@ struct UserEditionView: View {
                     label: {
                         if userEditionViewModel.load {
                             ProgressView().padding(.trailing, 5)
+                                .progressViewStyle(CircularProgressViewStyle(tint: .white))
                             Text("button.loading")
                         } else {
                             Text("button.save")

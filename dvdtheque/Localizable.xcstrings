@@ -331,6 +331,40 @@
         }
       }
     },
+    "scan.error" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unrecognized barcode"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Code-barres non reconnu"
+          }
+        }
+      }
+    },
+    "scan.instruction" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scan your product barcode"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scanner le code-barres de votre produit"
+          }
+        }
+      }
+    },
     "user.favorite_actors" : {
       "localizations" : {
         "en" : {
