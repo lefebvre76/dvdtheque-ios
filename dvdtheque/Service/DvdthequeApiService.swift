@@ -82,7 +82,9 @@ class DvdthequeApiService: ApiService {
     }
     
     func getMeBoxes(wishlist: Bool = false, page: Int = 1, search: String? = nil) async throws -> LightBoxResponse {
-        let (data, _) = try await self.call(url: Endpoint.myBoxes.absoluteURL)
+        let (data, _) = try await self.call(url: Endpoint.myBoxes.absoluteURL.appending(parameters: [
+            "wishlist": wishlist
+        ]))
         let decoded = try JSONDecoder().decode(LightBoxResponse.self, from: data)
         return decoded
     }
