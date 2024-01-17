@@ -62,13 +62,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Item added to my DVDs"
+            "value" : "\"%@\" added to my DVDs"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : "Item ajouté à ma collection"
+            "value" : "\"%@\" ajouté à ma collection"
           }
         }
       }
@@ -79,13 +79,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Item added to my Wishlist"
+            "value" : "\"%@\" added to my Wishlist"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : "Item ajouté à ma wishlist"
+            "value" : "\"%@\" ajouté à ma wishlist"
           }
         }
       }

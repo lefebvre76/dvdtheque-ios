@@ -15,6 +15,8 @@ class AuthContainerViewModel: ObservableObject {
     @Published public var toastTitle: String?
     @Published public var toastMessage: String?
 
+    @Published public var loading = false
+
     public var apiService = DvdthequeApiService()
 
     func showToast(title: String, message: String? = nil, isError: Bool = false) {
@@ -42,6 +44,12 @@ class AuthContainerViewModel: ObservableObject {
             print(error)
         }
     }
+
+    func showLoading(value: Bool) {
+        Task {
+            await setLoading(value)
+        }
+    }
 }
 
 extension AuthContainerViewModel {
@@ -63,5 +71,9 @@ extension AuthContainerViewModel {
 
     @MainActor private func setToastMessage(_ value: String?) {
         toastMessage = value
+    }
+
+    @MainActor private func setLoading(_ value: Bool) {
+        loading = value
     }
 }

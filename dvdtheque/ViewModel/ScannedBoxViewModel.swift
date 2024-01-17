@@ -28,13 +28,15 @@ class ScannedBoxViewModel: AuthContainerViewModel {
 
 extension ScannedBoxViewModel {
     private func addBox(id: Int, wishlist: Bool) {
+        showLoading(value: true)
         Task {
             do {
                 _ = try await apiService.postMyBoxes(id: id, wishlist: wishlist)
-                close(message: wishlist ? "box.addedToWishlist" : "box.addedToCollection")
+                close(message: wishlist ? "box.addedToWishlist".localized(arguments: box.title) : "box.addedToCollection".localized(arguments: box.title))
             } catch {
                 self.managerError(error: error)
             }
+            showLoading(value: false)
         }
     }
 }

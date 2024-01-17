@@ -22,6 +22,7 @@ class MyBoxesViewModel: AuthContainerViewModel {
 
     func loadData() {
         currentPage = 1
+        showLoading(value: true)
         Task {
             await setBoxes([])
             await setShowLoadMore(false)
@@ -45,6 +46,7 @@ class MyBoxesViewModel: AuthContainerViewModel {
         } catch {
             self.managerError(error: error)
         }
+        showLoading(value: false)
     }
 }
 

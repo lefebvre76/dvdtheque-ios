@@ -23,6 +23,7 @@ class BoxViewModel: AuthContainerViewModel {
     }
 
     func loadData() {
+        showLoading(value: true)
         Task {
             await self.loadDetails()
         }
@@ -35,6 +36,7 @@ class BoxViewModel: AuthContainerViewModel {
         } catch {
             self.managerError(error: error)
         }
+        showLoading(value: false)
     }
 }
 

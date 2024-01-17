@@ -33,5 +33,9 @@ struct AuthContainerView<Content: View>: View {
                        title: authContainerViewModel.toastTitle,
                        subTitle: authContainerViewModel.toastMessage)
         }
+        .toast(isPresenting: $authContainerViewModel.loading){
+            AlertToast(type: .loading,
+                       title: "load.load_more_data")
+        }
     }
 }

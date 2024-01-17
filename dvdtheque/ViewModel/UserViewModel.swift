@@ -20,6 +20,7 @@ class UserViewModel: AuthContainerViewModel {
     }
 
     func loadUserInformations() {
+        showLoading(value: true)
         Task {
             do {
                 let data = try await apiService.getUserInformations()
@@ -27,6 +28,7 @@ class UserViewModel: AuthContainerViewModel {
             } catch {
                 self.managerError(error: error)
             }
+            showLoading(value: false)
         }
     }
     
