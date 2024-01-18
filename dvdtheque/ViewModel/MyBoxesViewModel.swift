@@ -85,8 +85,8 @@ class MyBoxesViewModel: AuthContainerViewModel {
         do {
             let response = try await apiService.getMeBoxes(wishlist: isWishlist, page: currentPage)
             await addBoxes(response.data)
-            await setShowLoadMore(false)
             await setTotal(response.meta.total)
+            await setShowLoadMore(response.meta.current_page < response.meta.last_page)
         } catch {
             self.managerError(error: error)
         }
