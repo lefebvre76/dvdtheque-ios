@@ -40,6 +40,8 @@ class AuthContainerViewModel: ObservableObject {
             Task {
                 await setShowAuthView(true)
             }
+        case let ApiService.ApiError.other(message):
+            showToast(title: message, isError: true)
         default:
             print(error)
         }

@@ -16,7 +16,7 @@ class ApiService {
         case unauthorized
         case unprocessableEntity(_ errors: [String: Any])
         case notFound
-        case other
+        case other(_ message: String)
     }
     
     enum Method: String {
@@ -42,25 +42,27 @@ class ApiService {
             do {
                 request.httpBody = try JSONSerialization.data(withJSONObject: params, options: .prettyPrinted)
             } catch {
-                throw ApiError.other
+                throw ApiError.other("general.error".localized())
             }
         }
-
-        let (data, response) = try await URLSession.shared.data(for: request)
-        if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode >= 300 {
-            switch httpResponse.statusCode {
-            case 401:
-                throw ApiError.unauthorized
-            case 404:
-                throw ApiError.notFound
-            case 422:
-                let json = (try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]) ?? [:]
-                throw ApiError.unprocessableEntity(json)
-            default:
-                throw ApiError.other
+        do {
+            let (data, response) = try await URLSession.shared.data(for: request)
+            if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode >= 300 {
+                switch httpResponse.statusCode {
+                case 401:
+                    throw ApiError.unauthorized
+                case 404:
+                    throw ApiError.notFound
+                case 422:
+                    let json = (try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]) ?? [:]
+                    throw ApiError.unprocessableEntity(json)
+                default:
+                    throw ApiError.other("general.error".localized())
+                }
             }
+            return (data, response)
+        } catch {
+            throw ApiError.other(error.localizedDescription)
         }
-        
-        return (data, response)
     }
 }
