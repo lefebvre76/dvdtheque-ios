@@ -25,6 +25,7 @@ class UserEditionViewModel: AuthContainerViewModel {
     init(user: User, completion: ((User?) -> ())?) {
         self.username = user.name
         self.completion = completion
+        super.init(loading: false)
     }
     
     func close() {

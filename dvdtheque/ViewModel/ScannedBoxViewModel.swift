@@ -9,12 +9,13 @@ import Foundation
 
 class ScannedBoxViewModel: AuthContainerViewModel {
 
-    public let box: Box
+    public var box: Box
     private var completion: ((String?) -> Void)?
     
     init(box: Box, completion: ((String?) -> Void)? = nil) {
         self.box = box
         self.completion = completion
+        super.init(loading: false)
     }
     
     func close(message: String? = nil) {
@@ -32,7 +33,7 @@ extension ScannedBoxViewModel {
         Task {
             do {
                 _ = try await apiService.postMyBoxes(id: id, wishlist: wishlist)
-                close(message: wishlist ? "box.added_to_wishlist".localized(arguments: box.title) : "box.added_to_tollection".localized(arguments: box.title))
+                close(message: wishlist ? "box.added_to_wishlist".localized(arguments: box.title) : "box.added_to_collection".localized(arguments: box.title))
             } catch {
                 self.managerError(error: error)
             }

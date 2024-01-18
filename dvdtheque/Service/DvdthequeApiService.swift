@@ -14,6 +14,7 @@ class DvdthequeApiService: ApiService {
         static let baseURL: String  = "http://localhost/api/"
 
         case login
+        case register
         case logout
         case me
         case myBoxes
@@ -25,6 +26,8 @@ class DvdthequeApiService: ApiService {
             switch self {
             case .login:
                 return "login"
+            case .register:
+                return "register"
             case .logout:
                 return "logout"
             case .me:
@@ -61,6 +64,18 @@ class DvdthequeApiService: ApiService {
             "email": email,
             "password": password
         ], withBearerToken: false)
+        let decoded = try JSONDecoder().decode(AuthResponse.self, from: data)
+        return decoded.token
+    }
+    
+    func register(name: String, email: String, password: String, confirmation: String) async throws -> String {
+        let (data, reponse) = try await self.call(url: Endpoint.register.absoluteURL, httpMethod: .post, parameters: [
+            "name": name,
+            "email": email,
+            "password": password,
+            "password_confirmation": confirmation
+        ], withBearerToken: false)
+        print(reponse)
         let decoded = try JSONDecoder().decode(AuthResponse.self, from: data)
         return decoded.token
     }

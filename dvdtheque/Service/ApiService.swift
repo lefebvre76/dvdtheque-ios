@@ -62,7 +62,11 @@ class ApiService {
             }
             return (data, response)
         } catch {
-            throw ApiError.other(error.localizedDescription)
+            if type(of: error) != ApiError.self {
+                throw ApiError.other(error.localizedDescription)
+            } else {
+                throw error
+            }
         }
     }
 }

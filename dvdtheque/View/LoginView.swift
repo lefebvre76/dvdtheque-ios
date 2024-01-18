@@ -18,20 +18,39 @@ struct LoginView: View {
                 .padding(.top)
             Spacer()
             VStack {
-                TextFieldError(text: $loginViewModel.email, placeholder: "user.mail", errors: [])
-
-                TextFieldError(text: $loginViewModel.password, placeholder: "user.password", errors: loginViewModel.errorMessages, securised: true)
+                if loginViewModel.showRegistration {
+                    TextFieldError(text: $loginViewModel.name, placeholder: "user.name", errors: loginViewModel.nameErrors)
+                }
+                TextFieldError(text: $loginViewModel.email, placeholder: "user.mail", errors: loginViewModel.showRegistration ? loginViewModel.emailErrors : [])
+                TextFieldError(text: $loginViewModel.password, placeholder: "user.password", errors: loginViewModel.showRegistration ? loginViewModel.passwordErrors : loginViewModel.errorMessages, securised: true)
+                if loginViewModel.showRegistration {
+                    TextFieldError(text: $loginViewModel.confirmation, placeholder: "user.password_confirmation", errors: loginViewModel.confirmationErrors, securised: true)
+                }
             }
 
             Button(
-                action: loginViewModel.auth,
+                action: {
+                    loginViewModel.showRegistration = !loginViewModel.showRegistration
+                },
+                label: {
+                    if loginViewModel.showRegistration {
+                        Text("button.login")
+                    } else {
+                        Text("button.register")
+                    }
+                }
+            )
+            
+            Spacer()
+            Button(
+                action: loginViewModel.showRegistration ? loginViewModel.register : loginViewModel.auth,
                 label: {
                     if loginViewModel.load {
                         ProgressView().padding(.trailing, 5)
                             .progressViewStyle(CircularProgressViewStyle(tint: .white))
                         Text("button.loading")
                     } else {
-                        Text("button.login")
+                        Text(loginViewModel.showRegistration ? "button.register" : "button.login")
                     }
                 }
             )
@@ -40,7 +59,6 @@ struct LoginView: View {
             .background(Color.blue)
             .cornerRadius(30)
             .padding(.top).disabled(loginViewModel.load)
-            Spacer()
         }
         .padding()
         .interactiveDismissDisabled()

@@ -16,9 +16,8 @@ class BarCodeScannerViewModel: AuthContainerViewModel {
     @Published public var foundedBox: Box?
     @Published public var scanMode: ScanMode = ScanMode.continuous
     
-    override init() {
-        super.init()
-        showLoading(value: false)
+    init() {
+        super.init(loading: false)
     }
     
     func barCodeFound(response: Result<ScanResult, ScanError>) {

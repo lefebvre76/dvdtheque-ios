@@ -280,6 +280,23 @@
         }
       }
     },
+    "button.register" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Register"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "S'enregistrer"
+          }
+        }
+      }
+    },
     "button.save" : {
       "localizations" : {
         "en" : {
@@ -590,6 +607,23 @@
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Mot de passe"
+          }
+        }
+      }
+    },
+    "user.password_confirmation" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Confirmation"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Confirmation"
           }
         }
       }

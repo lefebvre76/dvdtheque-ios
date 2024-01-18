@@ -19,6 +19,10 @@ class AuthContainerViewModel: ObservableObject {
 
     public var apiService = DvdthequeApiService()
 
+    init(loading: Bool = true) {
+        self.loading = loading
+    }
+    
     func showToast(title: String, message: String? = nil, isError: Bool = false) {
         Task {
             await setToastType(isError ? .error(.red) : .regular)
