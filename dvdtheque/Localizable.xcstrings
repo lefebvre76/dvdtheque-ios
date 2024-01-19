@@ -350,6 +350,23 @@
         }
       }
     },
+    "general.no_result_for_search" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No result for search \"%@\""
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Aucun résultat pour \"%@\""
+          }
+        }
+      }
+    },
     "load.load_more_data" : {
       "localizations" : {
         "en" : {

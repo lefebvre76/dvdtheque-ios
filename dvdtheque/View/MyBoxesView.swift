@@ -13,7 +13,7 @@ struct MyBoxesView: View {
 
     var body: some View {
         AuthContainerView(authContainerViewModel: myBoxesViewModel) {
-            if myBoxesViewModel.boxes.isEmpty, !myBoxesViewModel.loading {
+            if myBoxesViewModel.boxes.isEmpty, !myBoxesViewModel.loading, myBoxesViewModel.searchText == "" {
                 NavigationView {
                     VStack {
                         Text(myBoxesViewModel.isWishlist ? "wishlist.is_empty" : "boxes.is_empty")
@@ -23,6 +23,9 @@ struct MyBoxesView: View {
                 }
             } else {
                 NavigationStack {
+                    if myBoxesViewModel.boxes.isEmpty, !myBoxesViewModel.loading {
+                        Text("general.no_result_for_search".localized(arguments: myBoxesViewModel.searchText)).padding()
+                    }
                     List {
                         ForEach(myBoxesViewModel.boxes, id: \.id) { box in
                             NavigationLink(destination: BoxView(boxViewModel: BoxViewModel(lightBox: box))) {
@@ -54,8 +57,12 @@ struct MyBoxesView: View {
                         }
                     }
                     .searchable(text: $myBoxesViewModel.searchText)
-                    .onChange(of: myBoxesViewModel.searchText) { _, _ in
-                        myBoxesViewModel.runSearch()
+                    .onChange(of: myBoxesViewModel.searchText) { _, newValue in
+                        if newValue == "" {
+                            myBoxesViewModel.loadData()
+                        } else {
+                            myBoxesViewModel.runSearch()
+                        }
                     }
                     .listStyle(.plain)
                     .navigationTitle(myBoxesViewModel.isWishlist ? "menu.wishlist" : "menu.boxes")
