@@ -16,8 +16,10 @@ class MyBoxesViewModel: AuthContainerViewModel {
     @Published public var showLoadMore = false
     @Published public var toBeDeleted: LightBox?
     @Published public var showingDeleteAlert = false
+    @Published public var searchText = ""
 
     private var currentPage = 1
+    private var searchTimer: Timer?
     
     init(isWishlist: Bool = false) {
         self.isWishlist = isWishlist
@@ -35,6 +37,16 @@ class MyBoxesViewModel: AuthContainerViewModel {
             await setBoxes([])
             await setShowLoadMore(false)
             await self.loadBoxes()
+        }
+    }
+    
+    func runSearch() {
+        if let timer = searchTimer {
+            timer.invalidate()
+        }
+        searchTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { [weak self] timer in
+            guard let self = self else { return }
+            self.loadData()
         }
     }
     
@@ -83,7 +95,7 @@ class MyBoxesViewModel: AuthContainerViewModel {
     
     private func loadBoxes() async {
         do {
-            let response = try await apiService.getMeBoxes(wishlist: isWishlist, page: currentPage)
+            let response = try await apiService.getMeBoxes(wishlist: isWishlist, page: currentPage, search: searchText)
             await addBoxes(response.data)
             await setTotal(response.meta.total)
             await setShowLoadMore(response.meta.current_page < response.meta.last_page)

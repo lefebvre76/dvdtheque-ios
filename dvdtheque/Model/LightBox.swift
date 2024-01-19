@@ -23,6 +23,6 @@ struct ResponseMeta: Decodable {
     let current_page: Int
     let last_page: Int
     let per_page: Int
-    let to: Int
+    let to: Int?
     let total: Int
 }
