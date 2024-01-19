@@ -28,6 +28,11 @@ struct ScannedBoxView: View {
                                     .font(.system(size: 20))
                                 Text("box.add_to_collection").padding()
                             })
+                            .frame(maxWidth: .infinity, maxHeight: 45)
+                            .foregroundColor(Color.white)
+                            .background(Color.blue)
+                            .cornerRadius(30)
+                            .padding(.horizontal)
                         }
                         if !scannedBoxViewModel.box.in_wishlist {
                             Button(action: {
@@ -36,7 +41,14 @@ struct ScannedBoxView: View {
                                 Image(systemName: "plus")
                                     .font(.system(size: 20))
                                 Text("box.add_to_wishlist").padding()
-                            })
+                            })            
+                            .frame(maxWidth: .infinity, maxHeight: 45)
+                            .foregroundColor(.blue)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 35)
+                                    .stroke(.blue, lineWidth: 1)
+                            )
+                            .padding(.horizontal)
                         }
                     }
                 }

@@ -6,9 +6,9 @@
 //
 
 import Foundation
+import SwiftUI
 
 class BoxViewModel: AuthContainerViewModel {
-
     @Published public var box: Box?
     @Published public var showActionDialog = false
     
@@ -28,6 +28,33 @@ class BoxViewModel: AuthContainerViewModel {
         Task {
             await self.loadDetails()
         }
+    }
+
+    func delete() {
+        showLoading(value: true)
+        Task {
+            do {
+                try await apiService.deleteMyBoxes(id: self.lightBox.id)
+            } catch {
+                self.managerError(error: error)
+                self.showToast(title: "general.error", isError: true)
+            }
+        }
+        showLoading(value: false)
+    }
+
+    func moveToCollection() {
+        showLoading(value: true)
+        Task {
+            do {
+                let box = try await apiService.postMyBoxes(id: self.lightBox.id, wishlist: false)
+                await setBox(box)
+            } catch {
+                self.managerError(error: error)
+                self.showToast(title: "general.error", isError: true)
+            }
+        }
+        showLoading(value: false)
     }
     
     private func loadDetails() async {

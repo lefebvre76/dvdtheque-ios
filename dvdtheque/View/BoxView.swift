@@ -58,18 +58,14 @@ struct BoxView: View {
             isPresented: $boxViewModel.showActionDialog,
             titleVisibility: .visible
         ) {
-            if boxViewModel.box?.in_collection ?? false {
-                Button("box.add_to_wishlist") {
-                    print("move to wishlist")
-                }
-            }
             if boxViewModel.box?.in_wishlist ?? false {
                 Button("box.add_to_collection") {
-                    print("move to collection")
+                    boxViewModel.moveToCollection()
                 }
             }
             Button("general.delete", role: .destructive) {
-                print("delete")
+                boxViewModel.delete()
+                dismiss()
             }
         }
     }
