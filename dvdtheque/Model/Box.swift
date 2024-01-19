@@ -22,4 +22,6 @@ struct Box: Decodable {
     let actors: [Celebrity]
     let composers: [Celebrity]
     let boxes: [LightBox]
+    let in_collection: Bool
+    let in_wishlist: Bool
 }

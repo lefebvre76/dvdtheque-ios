@@ -11,41 +11,61 @@ import SwiftUI
 struct ScannedBoxView: View {
 
     @StateObject var scannedBoxViewModel: ScannedBoxViewModel
+    @State var opacity = 0.0
+    @State var closeButtonColor = Color.black
 
     var body: some View {
         AuthContainerView(authContainerViewModel: scannedBoxViewModel) {
-            VStack() {
-                HStack() {
-                    Spacer()
-                    Button(action: {
-                        scannedBoxViewModel.close()
-                    }, label: {
-                        Image(systemName: "xmark")
-                            .font(.system(size: 20))
-                            .foregroundColor(Color(uiColor: UIColor.label))
-                            .padding(.vertical)
-                            .padding(.leading)
-                            .padding(.trailing, 0)
-                    }).padding()
-                }
-                BoxDetailView(box: scannedBoxViewModel.box)
+            ZStack(content: {
                 VStack() {
-                    Button(action: {
-                        scannedBoxViewModel.add(wishlist: false)
-                    }, label: {
-                        Image(systemName: "plus")
-                            .font(.system(size: 20))
-                        Text("box.add_to_collection").padding()
-                    })
-                    Button(action: {
-                        scannedBoxViewModel.add(wishlist: true)
-                    }, label: {
-                        Image(systemName: "plus")
-                            .font(.system(size: 20))
-                        Text("box.add_to_wishlist").padding()
-                    })
+                    BoxDetailView(box: scannedBoxViewModel.box, opacity: $opacity)
+                    VStack() {
+                        if !scannedBoxViewModel.box.in_collection {
+                            Button(action: {
+                                scannedBoxViewModel.add(wishlist: false)
+                            }, label: {
+                                Image(systemName: "plus")
+                                    .font(.system(size: 20))
+                                Text("box.add_to_collection").padding()
+                            })
+                        }
+                        if !scannedBoxViewModel.box.in_wishlist {
+                            Button(action: {
+                                scannedBoxViewModel.add(wishlist: true)
+                            }, label: {
+                                Image(systemName: "plus")
+                                    .font(.system(size: 20))
+                                Text("box.add_to_wishlist").padding()
+                            })
+                        }
+                    }
                 }
-            }
+                VStack() {
+                    HStack() {
+                        Text("\(scannedBoxViewModel.box.title)").bold().opacity(Double(opacity)).padding()
+                        Spacer()
+                        Button(action: {
+                            scannedBoxViewModel.close()
+                        }, label: {
+                            Image(systemName: "xmark")
+                                .font(.system(size: 20))
+                                .foregroundColor(closeButtonColor)
+                                .padding()
+                        })
+                    }
+                        .background(Color(UIColor.systemBackground).opacity(Double(opacity)))
+                        .onChange(of: opacity) { _, value in
+                            withAnimation {
+                                if opacity < 0.25 {
+                                    closeButtonColor = .black
+                                } else {
+                                    closeButtonColor = Color(uiColor: UIColor.label)
+                                }
+                            }
+                        }
+                    Spacer()
+                }
+            }).navigationBarHidden(true)
         }
     }
 }
@@ -65,5 +85,5 @@ struct ScannedBoxView: View {
                                                                      directors: [Celebrity(id: 1, name: "Stevent Speilberg")],
                                                                      actors: [], composers: [], boxes: [
                                                                           LightBox(id: 2, type: "BRD", title: "Dark Shadows", illustration: Illustration(original: "http://localhost/storage/8/old-dark_shadows_bis_br.0.jpg", thumbnail: "http://localhost/storage/8/conversions/old-dark_shadows_bis_br.0-thumbnail.jpg"))
-                                                                     ])))
+                                                                     ], in_collection: true, in_wishlist: false))).preferredColorScheme(.dark)
 }

@@ -10,25 +10,48 @@ import SwiftData
 
 struct BoxDetailView: View {
     var box: Box
+    @Binding var opacity: Double
+    @Environment(\.safeAreaInsets) private var safeAreaInsets
+    let illustrationHeight = CGFloat(300)
 
     var body: some View {
-        ZStack(alignment: Alignment(horizontal: .center, vertical: .top)) {
-            HStack {
-                AsyncImage(url: URL(string: box.illustration.original), content: { image in
-                    image.frame(height: 250)
-                        .scaledToFill()
-                        .clipped()
-                },
-                           placeholder: {
-                    HStack {
+        ScrollView(.vertical, showsIndicators: false) {
+            GeometryReader { geometry in
+                HStack(alignment: .center) {
+                    AsyncImage(url: URL(string: box.illustration.original), content: { image in
+                        image
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(maxWidth: .infinity)
+
+                    },
+                               placeholder: {
                         Image(systemName: "opticaldisc")
-                            .font(.largeTitle)
+                            .font(.system(size: 60))
+                            .foregroundColor(.black)
+                            .aspectRatio(contentMode: .fit)
+                            .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    })
+                }.background(.white)
+                    .offset(y: -geometry.frame(in: .global).minY)
+                    .frame(width: UIScreen.main.bounds.width,
+                           height: (geometry.frame(in: .global).minY > 0 ? geometry.frame(in: .global).minY : 0) + 300)
+                    .onChange(of: geometry.frame(in: .global).minY) { _, value in
+                        let offset = illustrationHeight + value
+                        let start = safeAreaInsets.top + 44
+                        let end = safeAreaInsets.top
+                        if offset < start {
+                            if offset > end {
+                                opacity = 1 - Double((offset - end)/(start-end))
+                                return
+                            }
+                            opacity = 1
+                        } else {
+                            opacity = 0
+                        }
                     }
-                    .frame(width: 75, height: 75)
-                })
-            }.frame(maxWidth: .infinity, idealHeight: 200)
-            ScrollView(.vertical, showsIndicators: true) {
-                Spacer().frame(height: 250)
+            }.frame(height: illustrationHeight)
+            VStack(alignment: .leading, spacing: 15) {
                 VStack {
                     Text(box.title).frame(maxWidth: .infinity, alignment: .leading).font(.title).padding(.bottom, 2)
                     if let edition = box.edition {
@@ -91,14 +114,16 @@ struct BoxDetailView: View {
                                 BoxItemView(box: subBox)
                             }
                         }
-                        
+
                     }
                     Spacer()
-                }.padding(.horizontal)
-                    .frame(maxWidth: .infinity)
-                    .background(.background)
+                }.padding()
+                .background(Color(UIColor.systemBackground))
+                .cornerRadius(5)
+                .offset(y: -20)
             }
-        }.frame(maxWidth: .infinity)
+        }
+        .ignoresSafeArea(.all)
     }
 }
 
@@ -116,5 +141,5 @@ struct BoxDetailView: View {
                            directors: [Celebrity(id: 1, name: "Stevent Speilberg")],
                            actors: [], composers: [], boxes: [
                                 LightBox(id: 2, type: "BRD", title: "Dark Shadows", illustration: Illustration(original: "http://localhost/storage/8/old-dark_shadows_bis_br.0.jpg", thumbnail: "http://localhost/storage/8/conversions/old-dark_shadows_bis_br.0-thumbnail.jpg"))
-                           ]))
+                           ], in_collection: true, in_wishlist: false), opacity:  .constant(0)).preferredColorScheme(.dark)
 }

@@ -10,6 +10,7 @@ import Foundation
 class BoxViewModel: AuthContainerViewModel {
 
     @Published public var box: Box?
+    @Published public var showActionDialog = false
     
     public let lightBox: LightBox
 

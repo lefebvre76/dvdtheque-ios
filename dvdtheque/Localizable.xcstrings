@@ -7,6 +7,9 @@
     "%lld" : {
 
     },
+    "Actions" : {
+
+    },
     "application.name" : {
       "extractionState" : "manual",
       "localizations" : {
