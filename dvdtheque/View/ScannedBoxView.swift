@@ -94,7 +94,7 @@ struct ScannedBoxView: View {
                                                                      editor: "",
                                                                      illustration: Illustration(original: "http://localhost/storage/2/3d-jurassic_park_1_2_3_4_br.0.jpg", thumbnail: "http://localhost/storage/2/conversions/3d-jurassic_park_1_2_3_4_br.0-thumbnail.jpg"),
                                                                      kinds: [Kind(id: 1, name: "Science Fiction"), Kind(id: 2, name: "Aventure")],
-                                                                     directors: [Celebrity(id: 1, name: "Stevent Speilberg")],
+                                                                     directors: [Celebrity(id: 1, name: "Stevent Speilberg", photo: Illustration(original: "https://image.tmdb.org/t/p/w300_and_h450_bestv2/tZxcg19YQ3e8fJ0pOs7hjlnmmr6.jpg", thumbnail: "https://image.tmdb.org/t/p/w90_and_h90_face/tZxcg19YQ3e8fJ0pOs7hjlnmmr6.jpg"))],
                                                                      actors: [], composers: [], boxes: [
                                                                           LightBox(id: 2, type: "BRD", title: "Dark Shadows", illustration: Illustration(original: "http://localhost/storage/8/old-dark_shadows_bis_br.0.jpg", thumbnail: "http://localhost/storage/8/conversions/old-dark_shadows_bis_br.0-thumbnail.jpg"))
                                                                      ], in_collection: true, in_wishlist: false))).preferredColorScheme(.dark)

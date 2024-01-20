@@ -80,9 +80,9 @@ struct BoxDetailView: View {
                     if box.directors.count > 0 {
                         Text(box.directors.count > 1 ? "box.directors" : "box.director").font(.headline).frame(maxWidth: .infinity, alignment: .leading).padding(.top, 20)
                         ScrollView(.horizontal) {
-                            HStack(spacing: 20) {
+                            HStack(alignment: .top, spacing: 20) {
                                 ForEach(box.directors, id: \.id) { director in
-                                    CelebrityItemView(name: "\(director.name)")
+                                    CelebrityItemView(celebrity: director)
                                 }
                             }
                         }
@@ -90,9 +90,9 @@ struct BoxDetailView: View {
                     if box.actors.count > 0 {
                         Text(box.actors.count > 1 ? "box.actors" : "box.actor").font(.headline).frame(maxWidth: .infinity, alignment: .leading).padding(.top, 20)
                         ScrollView(.horizontal) {
-                            HStack(spacing: 20) {
+                            HStack(alignment: .top, spacing: 20) {
                                 ForEach(box.actors, id: \.id) { actor in
-                                    CelebrityItemView(name: "\(actor.name)")
+                                    CelebrityItemView(celebrity: actor)
                                 }
                             }
                         }
@@ -100,9 +100,9 @@ struct BoxDetailView: View {
                     if box.composers.count > 0 {
                         Text(box.composers.count > 1 ? "box.composers" : "box.composer").font(.headline).frame(maxWidth: .infinity, alignment: .leading).padding(.top, 20)
                         ScrollView(.horizontal) {
-                            HStack(spacing: 20) {
+                            HStack(alignment: .top, spacing: 20) {
                                 ForEach(box.composers, id: \.id) { composer in
-                                    CelebrityItemView(name: "\(composer.name)")
+                                    CelebrityItemView(celebrity: composer)
                                 }
                             }
                         }
@@ -138,7 +138,7 @@ struct BoxDetailView: View {
                            editor: "",
                            illustration: Illustration(original: "http://localhost/storage/2/3d-jurassic_park_1_2_3_4_br.0.jpg", thumbnail: "http://localhost/storage/2/conversions/3d-jurassic_park_1_2_3_4_br.0-thumbnail.jpg"),
                            kinds: [Kind(id: 1, name: "Science Fiction"), Kind(id: 2, name: "Aventure")],
-                           directors: [Celebrity(id: 1, name: "Stevent Speilberg")],
+                           directors: [Celebrity(id: 1, name: "Stevent Speilberg", photo: Illustration(original: "https://image.tmdb.org/t/p/w300_and_h450_bestv2/tZxcg19YQ3e8fJ0pOs7hjlnmmr6.jpg", thumbnail: "https://image.tmdb.org/t/p/w90_and_h90_face/tZxcg19YQ3e8fJ0pOs7hjlnmmr6.jpg"))],
                            actors: [], composers: [], boxes: [
                                 LightBox(id: 2, type: "BRD", title: "Dark Shadows", illustration: Illustration(original: "http://localhost/storage/8/old-dark_shadows_bis_br.0.jpg", thumbnail: "http://localhost/storage/8/conversions/old-dark_shadows_bis_br.0-thumbnail.jpg"))
                            ], in_collection: true, in_wishlist: false), opacity:  .constant(0)).preferredColorScheme(.dark)

@@ -13,8 +13,8 @@ struct User: Decodable {
     let total_boxes: Int
     let total_movies: Int
     let favorite_kinds: [PopularItem]
-    let favorite_directors: [PopularItem]
-    let favorite_actors: [PopularItem]
+    let favorite_directors: [Celebrity]
+    let favorite_actors: [Celebrity]
 }
 
 struct PopularItem: Decodable {

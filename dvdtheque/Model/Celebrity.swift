@@ -10,4 +10,5 @@ import Foundation
 struct Celebrity: Decodable {
     let id: Int
     let name: String
+    let photo: Illustration?
 }

@@ -45,17 +45,17 @@ struct UserView: View {
                                 }
                                 Text("user.favorite_directors").font(.headline).padding(.top, 20)
                                 ScrollView(.horizontal) {
-                                    HStack(spacing: 20) {
+                                    HStack(alignment: .top, spacing: 20) {
                                         ForEach(user.favorite_directors, id: \.id) { director in
-                                            CelebrityItemView(name: "\(director.name)")
+                                            CelebrityItemView(celebrity: director)
                                         }
                                     }
                                 }
                                 Text("user.favorite_actors").font(.headline).padding(.top, 20)
                                 ScrollView(.horizontal) {
-                                    HStack(spacing: 20) {
+                                    HStack(alignment: .top, spacing: 20) {
                                         ForEach(user.favorite_actors, id: \.id) { actor in
-                                            CelebrityItemView(name: "\(actor.name)")
+                                            CelebrityItemView(celebrity: actor)
                                         }
                                     }
                                 }
