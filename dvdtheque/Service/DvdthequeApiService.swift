@@ -19,6 +19,8 @@ class DvdthequeApiService: ApiService {
         case me
         case myBoxes
         case boxes
+        case loans
+        case loan(id: Int)
         case box(id: Int)
         case setMyBoxes(id: Int)
         
@@ -32,6 +34,10 @@ class DvdthequeApiService: ApiService {
                 return "logout"
             case .me:
                 return "me"
+            case .loans:
+                return "loans"
+            case let .loan(id):
+                return "loans/\(id)"
             case .boxes:
                 return "boxes"
             case let .box(id):
@@ -130,5 +136,13 @@ class DvdthequeApiService: ApiService {
     
     func deleteMyBoxes(id: Int) async throws {
         let (_, _) = try await self.call(url: Endpoint.setMyBoxes(id: id).absoluteURL, httpMethod: .delete)
+    }
+    
+    func postLoan(parameters: [String: Any]) async throws {
+        let (_, _) = try await self.call(url: Endpoint.loans.absoluteURL, httpMethod: .post, parameters: parameters)
+    }
+    
+    func deleteLoan(id: Int) async throws {
+        let (_, _) = try await self.call(url: Endpoint.loan(id: id).absoluteURL, httpMethod: .delete)
     }
 }

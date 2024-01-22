@@ -41,6 +41,9 @@
 		D76ABCE82B51849B0016105B /* TextFieldError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76ABCE72B51849B0016105B /* TextFieldError.swift */; };
 		D76F9C292B57E46100C3B04D /* AlertToast in Frameworks */ = {isa = PBXBuildFile; productRef = D76F9C282B57E46100C3B04D /* AlertToast */; };
 		D76F9C302B58535000C3B04D /* lefebvre76-utilities in Frameworks */ = {isa = PBXBuildFile; productRef = D76F9C2F2B58535000C3B04D /* lefebvre76-utilities */; };
+		D78861E92B5E5619006322C0 /* Loan.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78861E82B5E5619006322C0 /* Loan.swift */; };
+		D78861EB2B5E5D99006322C0 /* CreateLoanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78861EA2B5E5D99006322C0 /* CreateLoanView.swift */; };
+		D78861ED2B5E5DDC006322C0 /* CreateLoanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78861EC2B5E5DDC006322C0 /* CreateLoanViewModel.swift */; };
 		D7C125B12B3203FA00245B5D /* CelebrityItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C125B02B3203FA00245B5D /* CelebrityItemView.swift */; };
 		D7C125B32B32081100245B5D /* KindItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C125B22B32081100245B5D /* KindItemView.swift */; };
 		D7F496822B5A65C6007F09D4 /* SafeAreaSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F496812B5A65C6007F09D4 /* SafeAreaSize.swift */; };
@@ -86,6 +89,9 @@
 		D76ABCE32B5137B60016105B /* UserEditionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEditionView.swift; sourceTree = "<group>"; };
 		D76ABCE52B5174010016105B /* UserEditionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEditionViewModel.swift; sourceTree = "<group>"; };
 		D76ABCE72B51849B0016105B /* TextFieldError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldError.swift; sourceTree = "<group>"; };
+		D78861E82B5E5619006322C0 /* Loan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loan.swift; sourceTree = "<group>"; };
+		D78861EA2B5E5D99006322C0 /* CreateLoanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLoanView.swift; sourceTree = "<group>"; };
+		D78861EC2B5E5DDC006322C0 /* CreateLoanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLoanViewModel.swift; sourceTree = "<group>"; };
 		D7C125B02B3203FA00245B5D /* CelebrityItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelebrityItemView.swift; sourceTree = "<group>"; };
 		D7C125B22B32081100245B5D /* KindItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KindItemView.swift; sourceTree = "<group>"; };
 		D7F496812B5A65C6007F09D4 /* SafeAreaSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeAreaSize.swift; sourceTree = "<group>"; };
@@ -165,6 +171,7 @@
 				D74495962B32D6300061B338 /* Box.swift */,
 				D744959A2B32DFDD0061B338 /* Celebrity.swift */,
 				D744959C2B32DFE60061B338 /* Kind.swift */,
+				D78861E82B5E5619006322C0 /* Loan.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -181,6 +188,7 @@
 				D76ABCE32B5137B60016105B /* UserEditionView.swift */,
 				D7FD1D652B567BA800084E5F /* BarCodeScannerView.swift */,
 				D7FD1D742B56FB8700084E5F /* ScannedBoxView.swift */,
+				D78861EA2B5E5D99006322C0 /* CreateLoanView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -196,6 +204,7 @@
 				D76ABCE52B5174010016105B /* UserEditionViewModel.swift */,
 				D7FD1D702B56F3CD00084E5F /* BarCodeScannerViewModel.swift */,
 				D7FD1D722B56FB7E00084E5F /* ScannedBoxViewModel.swift */,
+				D78861EC2B5E5DDC006322C0 /* CreateLoanViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -324,6 +333,7 @@
 			files = (
 				D7358C842B307CE00049FF72 /* LoadView.swift in Sources */,
 				D7FD1D752B56FB8700084E5F /* ScannedBoxView.swift in Sources */,
+				D78861EB2B5E5D99006322C0 /* CreateLoanView.swift in Sources */,
 				D70F79212B2C586D004F862A /* DvdthequeApiService.swift in Sources */,
 				D70F79122B2C55A0004F862A /* dvdtheque.xcdatamodeld in Sources */,
 				D74495992B32DB890061B338 /* BoxDetailView.swift in Sources */,
@@ -343,9 +353,11 @@
 				D7358C822B307B040049FF72 /* BoxItemView.swift in Sources */,
 				D744959D2B32DFE60061B338 /* Kind.swift in Sources */,
 				D7F496822B5A65C6007F09D4 /* SafeAreaSize.swift in Sources */,
+				D78861E92B5E5619006322C0 /* Loan.swift in Sources */,
 				D74495972B32D6300061B338 /* Box.swift in Sources */,
 				D7358C8A2B308C800049FF72 /* Persistance.swift in Sources */,
 				D70F79082B2C559F004F862A /* ContentView.swift in Sources */,
+				D78861ED2B5E5DDC006322C0 /* CreateLoanViewModel.swift in Sources */,
 				D7358C7F2B30414A0049FF72 /* ApiService.swift in Sources */,
 				D70F79062B2C559F004F862A /* dvdthequeApp.swift in Sources */,
 				D7358C862B307F600049FF72 /* LoginView.swift in Sources */,

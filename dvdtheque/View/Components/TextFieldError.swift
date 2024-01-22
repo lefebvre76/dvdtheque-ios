@@ -12,6 +12,7 @@ struct TextFieldError: View {
     var placeholder: String
     var errors: [String] = []
     var securised = false
+    var isMultiLine = false
 
     var body: some View {
         VStack(alignment: .leading) {

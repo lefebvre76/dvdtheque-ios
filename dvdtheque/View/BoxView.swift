@@ -49,18 +49,47 @@ struct BoxView: View {
                             }
                         }
                 }).navigationBarHidden(true)
+                .sheet(isPresented: $boxViewModel.showLoanForm) {
+                    CreateLoanView(createLoanViewModel: CreateLoanViewModel(box: box, parentBox: nil, isBorrow: boxViewModel.isBorrow, completion: {
+                        boxViewModel.closeLoanView()
+                        boxViewModel.loadData()
+                    }))
+                }
             }
         }.onAppear {
             boxViewModel.loadData()
         }
         .confirmationDialog(
-            Text("Actions"),
+            Text("general.actions"),
             isPresented: $boxViewModel.showActionDialog,
             titleVisibility: .visible
         ) {
-            if boxViewModel.box?.in_wishlist ?? false {
-                Button("box.add_to_collection") {
-                    boxViewModel.moveToCollection()
+            if !(boxViewModel.box?.in_collection ?? false) {
+                if boxViewModel.box?.in_wishlist ?? false {
+                    Button("box.add_to_collection") {
+                        boxViewModel.moveToCollection()
+                    }
+                }
+                if let loan = boxViewModel.box?.loans.first(where: { $0.type == "BORROW" }) {
+                    Button("box.return_to".localized(arguments: loan.contact)) {
+                        boxViewModel.removeLoan(id: loan.id)
+                    }
+                } else {
+                    Button("box.borrow") {
+                        boxViewModel.isBorrow = true
+                        boxViewModel.showLoanForm = true
+                    }
+                }
+            } else {
+                if let loan = boxViewModel.box?.loans.first(where: { $0.type == "LOAN" }) {
+                    Button("box.return_to_me".localized(arguments: loan.contact)) {
+                        boxViewModel.removeLoan(id: loan.id)
+                    }
+                } else {
+                    Button("box.loan") {
+                        boxViewModel.isBorrow = false
+                        boxViewModel.showLoanForm = true
+                    }
                 }
             }
             Button("general.delete", role: .destructive) {
@@ -72,5 +101,5 @@ struct BoxView: View {
 }
 
 #Preview {
-    BoxView(boxViewModel: BoxViewModel(lightBox: LightBox(id: 1, type: "BRD", title: "Batman", illustration: Illustration(original: "", thumbnail: ""))))
+    BoxView(boxViewModel: BoxViewModel(lightBox: LightBox(id: 1, type: "BRD", title: "Batman", illustration: Illustration(original: "", thumbnail: ""), loaned: false)))
 }

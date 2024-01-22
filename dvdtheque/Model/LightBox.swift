@@ -12,6 +12,7 @@ struct LightBox: Decodable {
     let type: String
     let title: String
     let illustration: Illustration
+    let loaned: Bool
 }
 
 struct LightBoxResponse: Decodable {

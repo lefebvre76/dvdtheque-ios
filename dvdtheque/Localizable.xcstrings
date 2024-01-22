@@ -7,9 +7,6 @@
     "%lld" : {
 
     },
-    "Actions" : {
-
-    },
     "application.name" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -23,6 +20,39 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ma DVDthèque"
+          }
+        }
+      }
+    },
+    "borrow.contact" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Owner"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Propriétaire"
+          }
+        }
+      }
+    },
+    "borrow.create" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "New borrow"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Création d'un emprunt"
           }
         }
       }
@@ -125,6 +155,23 @@
         }
       }
     },
+    "box.borrow" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Borrow"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Emprunter"
+          }
+        }
+      }
+    },
     "box.composer" : {
       "localizations" : {
         "en" : {
@@ -222,12 +269,86 @@
         }
       }
     },
-    "boxes.is_empty" : {
+    "box.loan" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Loan"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Prêter"
+          }
+        }
+      }
+    },
+    "box.loaned" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Loaned"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Prêté"
+          }
+        }
+      }
+    },
+    "box.return_to" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Return to %@"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "Rendre à %@"
+          }
+        }
+      }
+    },
+    "box.return_to_me" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ gave it back to me"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ me l'a rendu"
+          }
+        }
+      }
+    },
+    "boxes.is_empty" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You don't have DVD, scan to add item"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "Votre collection est vide. Cliquer sur Scanner pour ajouter des produits."
           }
         }
@@ -316,6 +437,22 @@
         }
       }
     },
+    "general.actions" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Actions"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que souhaitez-vous faire ?"
+          }
+        }
+      }
+    },
     "general.delete" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -379,6 +516,56 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Chargement des données"
+          }
+        }
+      }
+    },
+    "loan.comment" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comment"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Commentaire"
+          }
+        }
+      }
+    },
+    "loan.contact" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Contact"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Contact"
+          }
+        }
+      }
+    },
+    "loan.create" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "New loan"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Création d'un prêt"
           }
         }
       }
@@ -683,9 +870,15 @@
     "wishlist.is_empty" : {
       "extractionState" : "manual",
       "localizations" : {
-        "fr" : {
+        "en" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "You don't have DVD in your wishlist, scan to add item"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "Votre wishlist est vide. Cliquer sur Scanner pour ajouter des produits."
           }
         }

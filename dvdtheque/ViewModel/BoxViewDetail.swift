@@ -11,6 +11,8 @@ import SwiftUI
 class BoxViewModel: AuthContainerViewModel {
     @Published public var box: Box?
     @Published public var showActionDialog = false
+    @Published public var showLoanForm = false
+    @Published public var isBorrow = false
     
     public let lightBox: LightBox
 
@@ -57,6 +59,25 @@ class BoxViewModel: AuthContainerViewModel {
         showLoading(value: false)
     }
     
+    func removeLoan(id: Int) {
+        showLoading(value: true)
+        Task {
+            do {
+                _ = try await apiService.deleteLoan(id: id)
+                await self.loadDetails()
+            } catch {
+                self.managerError(error: error)
+            }
+            showLoading(value: false)
+        }
+    }
+
+    func closeLoanView() {
+        Task {
+            await setShowLoanForm(false)
+        }
+    }
+
     private func loadDetails() async {
         do {
             let response = try await apiService.getBox(id: self.lightBox.id)
@@ -71,5 +92,9 @@ class BoxViewModel: AuthContainerViewModel {
 extension BoxViewModel {
     @MainActor private func setBox(_ value: Box) {
         box = value
+    }
+
+    @MainActor private func setShowLoanForm(_ value: Bool) {
+        showLoanForm = value
     }
 }

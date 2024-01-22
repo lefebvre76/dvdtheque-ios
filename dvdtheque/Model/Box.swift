@@ -24,4 +24,5 @@ struct Box: Decodable {
     let boxes: [LightBox]
     let in_collection: Bool
     let in_wishlist: Bool
+    let loans: [Loan]
 }

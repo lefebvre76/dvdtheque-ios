@@ -33,15 +33,71 @@ struct ScannedBoxView: View {
                             .background(Color.blue)
                             .cornerRadius(30)
                             .padding(.horizontal)
+                            if !scannedBoxViewModel.box.in_wishlist {
+                                Button(action: {
+                                    scannedBoxViewModel.add(wishlist: true)
+                                }, label: {
+                                    Image(systemName: "plus")
+                                        .font(.system(size: 20))
+                                    Text("box.add_to_wishlist").padding()
+                                })
+                                .frame(maxWidth: .infinity, maxHeight: 45)
+                                .foregroundColor(.blue)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 35)
+                                        .stroke(.blue, lineWidth: 1)
+                                )
+                                .padding(.horizontal)
+                            }
                         }
-                        if !scannedBoxViewModel.box.in_wishlist {
+                        if let loan = scannedBoxViewModel.box.loans.first(where: { $0.type == "LOAN" }) {
                             Button(action: {
-                                scannedBoxViewModel.add(wishlist: true)
+                                scannedBoxViewModel.removeLoan(id: loan.id)
                             }, label: {
-                                Image(systemName: "plus")
-                                    .font(.system(size: 20))
-                                Text("box.add_to_wishlist").padding()
-                            })            
+                                Text("box.return_to_me".localized(arguments: loan.contact)).padding()
+                            })
+                            .frame(maxWidth: .infinity, maxHeight: 45)
+                            .foregroundColor(.blue)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 35)
+                                    .stroke(.blue, lineWidth: 1)
+                            )
+                            .padding(.horizontal)
+                        } else if scannedBoxViewModel.box.in_collection {
+                            Button(action: {
+                                scannedBoxViewModel.isBorrow = false
+                                scannedBoxViewModel.showLoanForm = true
+                            }, label: {
+                                Text("box.loan").padding()
+                            })
+                            .frame(maxWidth: .infinity, maxHeight: 45)
+                            .foregroundColor(.blue)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 35)
+                                    .stroke(.blue, lineWidth: 1)
+                            )
+                            .padding(.horizontal)
+                        }
+                        if let loan = scannedBoxViewModel.box.loans.first(where: { $0.type == "BORROW" }) {
+                            Button(action: {
+                                scannedBoxViewModel.removeLoan(id: loan.id)
+                            }, label: {
+                                Text("box.return_to".localized(arguments: loan.contact)).padding()
+                            })
+                            .frame(maxWidth: .infinity, maxHeight: 45)
+                            .foregroundColor(.blue)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 35)
+                                    .stroke(.blue, lineWidth: 1)
+                            )
+                            .padding(.horizontal)
+                        } else if !scannedBoxViewModel.box.in_collection {
+                            Button(action: {
+                                scannedBoxViewModel.isBorrow = true
+                                scannedBoxViewModel.showLoanForm = true
+                            }, label: {
+                                Text("box.borrow").padding()
+                            })
                             .frame(maxWidth: .infinity, maxHeight: 45)
                             .foregroundColor(.blue)
                             .overlay(
@@ -79,6 +135,11 @@ struct ScannedBoxView: View {
                 }
             }).navigationBarHidden(true)
         }
+        .sheet(isPresented: $scannedBoxViewModel.showLoanForm) {
+            CreateLoanView(createLoanViewModel: CreateLoanViewModel(box: scannedBoxViewModel.box, parentBox: nil, isBorrow: scannedBoxViewModel.isBorrow, completion: {
+                scannedBoxViewModel.close()
+            }))
+        }
     }
 }
 
@@ -96,6 +157,6 @@ struct ScannedBoxView: View {
                                                                      kinds: [Kind(id: 1, name: "Science Fiction"), Kind(id: 2, name: "Aventure")],
                                                                      directors: [Celebrity(id: 1, name: "Stevent Speilberg", photo: Illustration(original: "https://image.tmdb.org/t/p/w300_and_h450_bestv2/tZxcg19YQ3e8fJ0pOs7hjlnmmr6.jpg", thumbnail: "https://image.tmdb.org/t/p/w90_and_h90_face/tZxcg19YQ3e8fJ0pOs7hjlnmmr6.jpg"))],
                                                                      actors: [], composers: [], boxes: [
-                                                                          LightBox(id: 2, type: "BRD", title: "Dark Shadows", illustration: Illustration(original: "http://localhost/storage/8/old-dark_shadows_bis_br.0.jpg", thumbnail: "http://localhost/storage/8/conversions/old-dark_shadows_bis_br.0-thumbnail.jpg"))
-                                                                     ], in_collection: true, in_wishlist: false))).preferredColorScheme(.dark)
+                                                                        LightBox(id: 2, type: "BRD", title: "Dark Shadows", illustration: Illustration(original: "http://localhost/storage/8/old-dark_shadows_bis_br.0.jpg", thumbnail: "http://localhost/storage/8/conversions/old-dark_shadows_bis_br.0-thumbnail.jpg"), loaned: false)
+                                                                     ], in_collection: true, in_wishlist: false, loans: []))).preferredColorScheme(.dark)
 }
