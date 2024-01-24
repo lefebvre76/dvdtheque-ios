@@ -49,6 +49,9 @@
 		D7F496822B5A65C6007F09D4 /* SafeAreaSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F496812B5A65C6007F09D4 /* SafeAreaSize.swift */; };
 		D7FBE0002B61525F0046D9BA /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FBDFFF2B61525F0046D9BA /* Notifications.swift */; };
 		D7FBE0022B615D670046D9BA /* ExpandableText.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FBE0012B615D670046D9BA /* ExpandableText.swift */; };
+		D7FBE0042B6165F70046D9BA /* LoansView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FBE0032B6165F70046D9BA /* LoansView.swift */; };
+		D7FBE0062B61661B0046D9BA /* LoansViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FBE0052B61661B0046D9BA /* LoansViewModel.swift */; };
+		D7FBE0082B6178FB0046D9BA /* LoanItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FBE0072B6178FB0046D9BA /* LoanItemView.swift */; };
 		D7FD1D642B567B5A00084E5F /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = D7FD1D632B567B5A00084E5F /* InfoPlist.xcstrings */; };
 		D7FD1D662B567BA800084E5F /* BarCodeScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FD1D652B567BA800084E5F /* BarCodeScannerView.swift */; };
 		D7FD1D6F2B56F0F900084E5F /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = D7FD1D6E2B56F0F900084E5F /* CodeScanner */; };
@@ -99,6 +102,9 @@
 		D7F496812B5A65C6007F09D4 /* SafeAreaSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeAreaSize.swift; sourceTree = "<group>"; };
 		D7FBDFFF2B61525F0046D9BA /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		D7FBE0012B615D670046D9BA /* ExpandableText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableText.swift; sourceTree = "<group>"; };
+		D7FBE0032B6165F70046D9BA /* LoansView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoansView.swift; sourceTree = "<group>"; };
+		D7FBE0052B61661B0046D9BA /* LoansViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoansViewModel.swift; sourceTree = "<group>"; };
+		D7FBE0072B6178FB0046D9BA /* LoanItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoanItemView.swift; sourceTree = "<group>"; };
 		D7FD1D622B5679DE00084E5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D7FD1D632B567B5A00084E5F /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		D7FD1D652B567BA800084E5F /* BarCodeScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarCodeScannerView.swift; sourceTree = "<group>"; };
@@ -193,6 +199,7 @@
 				D7FD1D652B567BA800084E5F /* BarCodeScannerView.swift */,
 				D7FD1D742B56FB8700084E5F /* ScannedBoxView.swift */,
 				D78861EA2B5E5D99006322C0 /* CreateLoanView.swift */,
+				D7FBE0032B6165F70046D9BA /* LoansView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -209,6 +216,7 @@
 				D7FD1D702B56F3CD00084E5F /* BarCodeScannerViewModel.swift */,
 				D7FD1D722B56FB7E00084E5F /* ScannedBoxViewModel.swift */,
 				D78861EC2B5E5DDC006322C0 /* CreateLoanViewModel.swift */,
+				D7FBE0052B61661B0046D9BA /* LoansViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -234,6 +242,7 @@
 				D74495982B32DB890061B338 /* BoxDetailView.swift */,
 				D76ABCE72B51849B0016105B /* TextFieldError.swift */,
 				D7FBE0012B615D670046D9BA /* ExpandableText.swift */,
+				D7FBE0072B6178FB0046D9BA /* LoanItemView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -347,12 +356,14 @@
 				D7FBE0022B615D670046D9BA /* ExpandableText.swift in Sources */,
 				D7358C912B309D820049FF72 /* UserView.swift in Sources */,
 				D70F791E2B2C5787004F862A /* Illustration.swift in Sources */,
+				D7FBE0042B6165F70046D9BA /* LoansView.swift in Sources */,
 				D74495952B32D60C0061B338 /* BoxViewDetail.swift in Sources */,
 				D7C125B32B32081100245B5D /* KindItemView.swift in Sources */,
 				D7FD1D662B567BA800084E5F /* BarCodeScannerView.swift in Sources */,
 				D76ABCE42B5137B60016105B /* UserEditionView.swift in Sources */,
 				D70F791C2B2C56B2004F862A /* LightBox.swift in Sources */,
 				D76ABCE82B51849B0016105B /* TextFieldError.swift in Sources */,
+				D7FBE0082B6178FB0046D9BA /* LoanItemView.swift in Sources */,
 				D7358C962B30B35B0049FF72 /* AuthContainerView.swift in Sources */,
 				D70F790F2B2C55A0004F862A /* Persistence.swift in Sources */,
 				D7358C9A2B30B83D0049FF72 /* User.swift in Sources */,
@@ -374,6 +385,7 @@
 				D744959B2B32DFDD0061B338 /* Celebrity.swift in Sources */,
 				D74495932B32D5E90061B338 /* BoxView.swift in Sources */,
 				D7FD1D712B56F3CD00084E5F /* BarCodeScannerViewModel.swift in Sources */,
+				D7FBE0062B61661B0046D9BA /* LoansViewModel.swift in Sources */,
 				D7C125B12B3203FA00245B5D /* CelebrityItemView.swift in Sources */,
 				D7358C7B2B303CF60049FF72 /* MyBoxesView.swift in Sources */,
 				D7FD1D732B56FB7E00084E5F /* ScannedBoxViewModel.swift in Sources */,

@@ -24,8 +24,8 @@ struct ContentView: View {
             BarCodeScannerView().tabItem {
                 Label("menu.add", systemImage: "barcode.viewfinder")
             }
-            MyBoxesView(myBoxesViewModel: MyBoxesViewModel(isWishlist: true)).tabItem {
-                Label("menu.wishlist", systemImage: "heart")
+            LoansView().tabItem {
+                Label("menu.loans", systemImage: "repeat")
             }
             UserView().tabItem {
                 Label("menu.account", systemImage: "person.crop.circle")

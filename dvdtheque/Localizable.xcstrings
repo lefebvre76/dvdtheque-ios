@@ -7,6 +7,16 @@
     "%@" : {
 
     },
+    "%@ : %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ : %2$@"
+          }
+        }
+      }
+    },
     "%lld" : {
 
     },
@@ -589,6 +599,17 @@
         }
       }
     },
+    "loan.borrow_to" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Emprunté à %@"
+          }
+        }
+      }
+    },
     "loan.comment" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -652,6 +673,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tiré du coffret %@"
+          }
+        }
+      }
+    },
+    "loan.loan_at" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prêté à %@"
           }
         }
       }
@@ -736,19 +768,36 @@
         }
       }
     },
+    "menu.loans" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Loans/Borrow"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prêts/emprunts"
+          }
+        }
+      }
+    },
     "menu.wishlist" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Wishlist"
+            "value" : "Show my Wishlist"
           }
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wishlist"
+            "state" : "needs_review",
+            "value" : "Voir ma Wishlist"
           }
         }
       }
