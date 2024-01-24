@@ -720,6 +720,17 @@
         }
       }
     },
+    "loans.is_empty" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Il n'y a pas de prêt ni d'emprunt pour le moment"
+          }
+        }
+      }
+    },
     "menu.account" : {
       "localizations" : {
         "en" : {

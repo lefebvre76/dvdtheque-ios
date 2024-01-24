@@ -32,6 +32,20 @@ class LoansViewModel: AuthContainerViewModel {
             await self.loadLoans()
         }
     }
+
+    func deleteItem(loan: Loan) {
+        Task {
+            do {
+                showLoading(value: true)
+                _ = try await apiService.deleteLoan(id: loan.id)
+                await removeLoan(loan)
+            } catch {
+                self.managerError(error: error)
+                self.showToast(title: "general.error", isError: true)
+            }
+            showLoading(value: false)
+        }
+    }
     
     func loadMoreData() {
         currentPage += 1
@@ -63,7 +77,7 @@ extension LoansViewModel {
         guard let index = loans.firstIndex(where: { $0.id == value.id }) else { return }
         loans.remove(at: index)
     }
-    
+
     @MainActor private func setLoans(_ items: [Loan]) {
         loans = items
     }
@@ -71,6 +85,7 @@ extension LoansViewModel {
     @MainActor private func setShowLoadMore(_ value: Bool) {
         showLoadMore = value
     }
+
     @MainActor private func setTotal(_ value: Int) {
         total = value
     }

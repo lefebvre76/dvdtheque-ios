@@ -12,10 +12,30 @@ struct LoansView: View {
 
     var body: some View {
         AuthContainerView(authContainerViewModel: loansViewModel) {
+            if loansViewModel.loans.isEmpty, !loansViewModel.loading {
+                NavigationView {
+                    VStack {
+                        Text("loans.is_empty")
+                        Spacer()
+                    }.refreshable {
+                        loansViewModel.loadData()
+                    }
+                }
+            } else {
                 NavigationStack {
                     List {
                         ForEach(loansViewModel.loans, id: \.id) { loan in
-                            LoanItemView(loan: loan)
+                            NavigationLink(destination: BoxView(boxViewModel: BoxViewModel(lightBox: loan.box))) {
+                                LoanItemView(loan: loan).swipeActions {
+                                    Button {
+                                        loansViewModel.deleteItem(loan: loan)
+                                    } label: {
+                                        Image(systemName: "checkmark")
+                                            .font(.system(size: 20))
+                                        Text((loan.type == "BORROW" ? "box.return_to" : "box.return_to_me").localized(arguments: loan.contact))
+                                    }.tint(.red)
+                                }
+                            }
                         }
                         .listRowSeparator(.hidden,
                                           edges: .all)
@@ -30,6 +50,7 @@ struct LoansView: View {
                     .onAppear() {
                         loansViewModel.loadData()
                     }
+                }
             }
         }
     }
