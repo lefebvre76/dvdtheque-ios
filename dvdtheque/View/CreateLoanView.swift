@@ -28,7 +28,10 @@ struct CreateLoanView: View {
                             .padding(.trailing, 0)
                     })
                 }
-                BoxItemView(box: createLoanViewModel.box).padding(.bottom)
+                BoxItemView(box: createLoanViewModel.box)
+                if let parent = createLoanViewModel.parentBox {
+                    Text("loan.from_box".localized(arguments: parent.title)).italic()
+                }
                 VStack {
                     TextFieldError(text: $createLoanViewModel.contact, placeholder: createLoanViewModel.isBorrow ? "borrow.contact" : "loan.contact", errors: createLoanViewModel.contactErrors)
                     
@@ -43,7 +46,7 @@ struct CreateLoanView: View {
                     Divider()
                     .padding(.bottom)
                     TextFieldError(text: $createLoanViewModel.comment, placeholder: "loan.comment", errors: createLoanViewModel.commentErrors, isMultiLine: true)
-                }
+                }.padding(.top)
                 Spacer()
                 Button(
                     action: createLoanViewModel.persisteLoan,

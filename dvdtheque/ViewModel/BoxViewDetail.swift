@@ -10,14 +10,16 @@ import SwiftUI
 
 class BoxViewModel: AuthContainerViewModel {
     @Published public var box: Box?
+    @Published public var parent_box: Box?
     @Published public var showActionDialog = false
     @Published public var showLoanForm = false
     @Published public var isBorrow = false
     
     public let lightBox: LightBox
 
-    init(lightBox: LightBox) {
+    init(lightBox: LightBox, parent_box: Box? = nil) {
         self.lightBox = lightBox
+        self.parent_box = parent_box
     }
     
     override func userIsLogged() {

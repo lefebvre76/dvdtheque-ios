@@ -19,7 +19,7 @@ class CreateLoanViewModel: AuthContainerViewModel {
     @Published public var contact: String = ""
     @Published public var comment: String = ""
     @Published public var showReminder: Bool = false
-    @Published public var reminder: Date = Date.now.addingTimeInterval(3600*24*30)
+    @Published public var reminder: Date = Date.now.addingTimeInterval(3600*24*30) // Add 1 month
     
     @Published public var errorMessage: String?
     @Published public var contactErrors: [String] = []
@@ -28,6 +28,9 @@ class CreateLoanViewModel: AuthContainerViewModel {
 
     init(box: Box, parentBox: Box?, isBorrow: Bool = false, completion: (() -> Void)? = nil) {
         self.box = LightBox(id: box.id, type: box.type, title: box.title, illustration: box.illustration, loaned: false)
+        if let pBox = parentBox {
+            self.parentBox = LightBox(id: pBox.id, type: pBox.type, title: pBox.title, illustration: pBox.illustration, loaned: false)
+        }
         self.completion = completion
         self.isBorrow = isBorrow
         super.init(loading: false)
@@ -48,6 +51,9 @@ class CreateLoanViewModel: AuthContainerViewModel {
                 ]
                 if showReminder {
                     parameters["reminder"] = Int(self.reminder.timeIntervalSince1970)
+                }
+                if let pBox = parentBox {
+                    parameters["box_parent_id"] = pBox.id
                 }
                 try await apiService.postLoan(parameters: parameters)
                 await setLoad(false)

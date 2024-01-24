@@ -602,6 +602,23 @@
         }
       }
     },
+    "loan.from_box" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "From %@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tiré du coffret %@"
+          }
+        }
+      }
+    },
     "loan.reminder_date" : {
       "localizations" : {
         "en" : {

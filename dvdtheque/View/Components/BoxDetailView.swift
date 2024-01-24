@@ -110,7 +110,7 @@ struct BoxDetailView: View {
                     if box.boxes.count > 0 {
                         Text("box.in_package").font(.headline).frame(maxWidth: .infinity, alignment: .leading).padding(.top, 20)
                         ForEach(box.boxes, id: \.id) { subBox in
-                            NavigationLink(destination: BoxView(boxViewModel: BoxViewModel(lightBox: subBox))) {
+                            NavigationLink(destination: BoxView(boxViewModel: BoxViewModel(lightBox: subBox, parent_box: box))) {
                                 BoxItemView(box: subBox)
                             }
                         }
