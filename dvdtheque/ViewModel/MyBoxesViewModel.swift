@@ -31,11 +31,11 @@ class MyBoxesViewModel: AuthContainerViewModel {
     }
 
     func loadData() {
-        currentPage = 1
         showLoading(value: true)
+        currentPage = 1
         Task {
-            await setBoxes([])
             await setShowLoadMore(false)
+            await setBoxes([])
             await self.loadBoxes()
         }
     }
