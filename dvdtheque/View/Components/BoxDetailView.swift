@@ -76,7 +76,8 @@ struct BoxDetailView: View {
                             }
                         }
                     }.padding(.vertical)
-                    Text("\(box.synopsis)").frame(maxWidth: .infinity, alignment: .leading)
+                    
+                    ExpandableText(box.synopsis, lineLimit: 3).frame(maxWidth: .infinity, alignment: .leading)
                     if box.directors.count > 0 {
                         Text(box.directors.count > 1 ? "box.directors" : "box.director").font(.headline).frame(maxWidth: .infinity, alignment: .leading).padding(.top, 20)
                         ScrollView(.horizontal) {
