@@ -40,10 +40,8 @@ struct CreateLoanView: View {
                             Text(message).font(.caption2).multilineTextAlignment(.leading).foregroundColor(.red)
                         }
                     }
-                    
                     Divider()
-                        .padding(.bottom)
-
+                    .padding(.bottom)
                     TextFieldError(text: $createLoanViewModel.comment, placeholder: "loan.comment", errors: createLoanViewModel.commentErrors, isMultiLine: true)
                 }
                 Spacer()

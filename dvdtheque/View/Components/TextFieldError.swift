@@ -21,6 +21,14 @@ struct TextFieldError: View {
                     placeholder.localized(),
                     text: $text
                 )
+            } else if isMultiLine {
+                TextField(
+                    placeholder.localized(),
+                    text: $text,
+                    axis: .vertical)
+                .lineLimit(2...)
+                .autocapitalization(.none)
+                .disableAutocorrection(true)
             } else {
                 TextField(
                     placeholder.localized(),
@@ -29,14 +37,25 @@ struct TextFieldError: View {
                 .autocapitalization(.none)
                 .disableAutocorrection(true)
             }
-
             Divider()
-            
+
             ForEach(errors, id: \.self) { message in
                 Text(message).font(.caption2).multilineTextAlignment(.leading).foregroundColor(.red)
             }
         }
         .padding(.bottom)
     }
-    
+}
+
+
+#Preview {
+    TextFieldError(text: .constant(""), placeholder: "test", errors: ["error 01", "error 02"], securised: true)
+}
+
+#Preview {
+    TextFieldError(text: .constant(""), placeholder: "test", errors: ["error 01", "error 02"])
+}
+
+#Preview {
+    TextFieldError(text: .constant(""), placeholder: "test", errors: ["error 01", "error 02"], isMultiLine: true)
 }
