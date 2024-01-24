@@ -716,6 +716,50 @@
         }
       }
     },
+    "notification.borrow.message" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vous avez emprunté \"%@\" à %@, n'oubliez pas de le rendre"
+          }
+        }
+      }
+    },
+    "notification.borrow.title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Emprunt en cours"
+          }
+        }
+      }
+    },
+    "notification.loan.message" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vous avez prêté \"%@\" à %@, demandez-lui de le rendre"
+          }
+        }
+      }
+    },
+    "notification.loan.title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prêt en cours"
+          }
+        }
+      }
+    },
     "scan.error" : {
       "extractionState" : "manual",
       "localizations" : {

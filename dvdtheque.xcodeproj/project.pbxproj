@@ -47,6 +47,7 @@
 		D7C125B12B3203FA00245B5D /* CelebrityItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C125B02B3203FA00245B5D /* CelebrityItemView.swift */; };
 		D7C125B32B32081100245B5D /* KindItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C125B22B32081100245B5D /* KindItemView.swift */; };
 		D7F496822B5A65C6007F09D4 /* SafeAreaSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F496812B5A65C6007F09D4 /* SafeAreaSize.swift */; };
+		D7FBE0002B61525F0046D9BA /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FBDFFF2B61525F0046D9BA /* Notifications.swift */; };
 		D7FD1D642B567B5A00084E5F /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = D7FD1D632B567B5A00084E5F /* InfoPlist.xcstrings */; };
 		D7FD1D662B567BA800084E5F /* BarCodeScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FD1D652B567BA800084E5F /* BarCodeScannerView.swift */; };
 		D7FD1D6F2B56F0F900084E5F /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = D7FD1D6E2B56F0F900084E5F /* CodeScanner */; };
@@ -95,6 +96,7 @@
 		D7C125B02B3203FA00245B5D /* CelebrityItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelebrityItemView.swift; sourceTree = "<group>"; };
 		D7C125B22B32081100245B5D /* KindItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KindItemView.swift; sourceTree = "<group>"; };
 		D7F496812B5A65C6007F09D4 /* SafeAreaSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeAreaSize.swift; sourceTree = "<group>"; };
+		D7FBDFFF2B61525F0046D9BA /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		D7FD1D622B5679DE00084E5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D7FD1D632B567B5A00084E5F /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		D7FD1D652B567BA800084E5F /* BarCodeScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarCodeScannerView.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 				D70F79202B2C586D004F862A /* DvdthequeApiService.swift */,
 				D7358C7E2B30414A0049FF72 /* ApiService.swift */,
 				D7358C892B308C800049FF72 /* Persistance.swift */,
+				D7FBDFFF2B61525F0046D9BA /* Notifications.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7FBE0002B61525F0046D9BA /* Notifications.swift in Sources */,
 				D7358C842B307CE00049FF72 /* LoadView.swift in Sources */,
 				D7FD1D752B56FB8700084E5F /* ScannedBoxView.swift in Sources */,
 				D78861EB2B5E5D99006322C0 /* CreateLoanView.swift in Sources */,

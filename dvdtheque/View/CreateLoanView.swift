@@ -35,7 +35,11 @@ struct CreateLoanView: View {
                 VStack {
                     TextFieldError(text: $createLoanViewModel.contact, placeholder: createLoanViewModel.isBorrow ? "borrow.contact" : "loan.contact", errors: createLoanViewModel.contactErrors)
                     
-                    Toggle(createLoanViewModel.isBorrow ? "borrow.select_reminder_date" : "loan.select_reminder_date", isOn: $createLoanViewModel.showReminder)
+                    Toggle(createLoanViewModel.isBorrow ? "borrow.select_reminder_date" : "loan.select_reminder_date", isOn: $createLoanViewModel.showReminder).onChange(of: createLoanViewModel.showReminder) { _, value in
+                        if value {
+                            createLoanViewModel.askNotificationPermissions()
+                        }
+                    }
                     
                     if createLoanViewModel.showReminder {
                         DatePicker(createLoanViewModel.isBorrow ? "borrow.reminder_date" : "loan.reminder_date", selection: $createLoanViewModel.reminder)

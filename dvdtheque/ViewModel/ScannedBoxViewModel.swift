@@ -33,6 +33,7 @@ class ScannedBoxViewModel: AuthContainerViewModel {
         Task {
             do {
                 _ = try await apiService.deleteLoan(id: id)
+                Notifications().removeNotification(loanId: id)
                 close()
             } catch {
                 self.managerError(error: error)

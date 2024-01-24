@@ -35,6 +35,13 @@ class CreateLoanViewModel: AuthContainerViewModel {
         self.isBorrow = isBorrow
         super.init(loading: false)
     }
+    
+    func askNotificationPermissions() {
+        Task {
+            let result = await Notifications().notificationPermissions()
+            await setShowReminder(result)
+        }
+    }
 
     func persisteLoan() {
         Task {
@@ -55,7 +62,8 @@ class CreateLoanViewModel: AuthContainerViewModel {
                 if let pBox = parentBox {
                     parameters["box_parent_id"] = pBox.id
                 }
-                try await apiService.postLoan(parameters: parameters)
+                let loan = try await apiService.postLoan(parameters: parameters)
+                Notifications().createNotification(loan: loan)
                 await setLoad(false)
                 if let completion = self.completion {
                     completion()
@@ -89,6 +97,10 @@ extension CreateLoanViewModel {
     
     @MainActor private func setErrorMessage(_ value: String?) {
         errorMessage = value
+    }
+
+    @MainActor private func setShowReminder(_ value: Bool) {
+        showReminder = value
     }
 
     @MainActor private func setLoad(_ value: Bool) {
