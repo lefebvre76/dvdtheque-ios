@@ -31,6 +31,19 @@ struct CreateLoanView: View {
                 BoxItemView(box: createLoanViewModel.box).padding(.bottom)
                 VStack {
                     TextFieldError(text: $createLoanViewModel.contact, placeholder: createLoanViewModel.isBorrow ? "borrow.contact" : "loan.contact", errors: createLoanViewModel.contactErrors)
+                    
+                    Toggle(createLoanViewModel.isBorrow ? "borrow.select_reminder_date" : "loan.select_reminder_date", isOn: $createLoanViewModel.showReminder)
+                    
+                    if createLoanViewModel.showReminder {
+                        DatePicker(createLoanViewModel.isBorrow ? "borrow.reminder_date" : "loan.reminder_date", selection: $createLoanViewModel.reminder)
+                        ForEach(createLoanViewModel.reminderErrors, id: \.self) { message in
+                            Text(message).font(.caption2).multilineTextAlignment(.leading).foregroundColor(.red)
+                        }
+                    }
+                    
+                    Divider()
+                        .padding(.bottom)
+
                     TextFieldError(text: $createLoanViewModel.comment, placeholder: "loan.comment", errors: createLoanViewModel.commentErrors, isMultiLine: true)
                 }
                 Spacer()

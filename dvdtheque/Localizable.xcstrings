@@ -57,6 +57,38 @@
         }
       }
     },
+    "borrow.reminder_date" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reminder date"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Date de retour"
+          }
+        }
+      }
+    },
+    "borrow.select_reminder_date" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select reminder date"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Sélectionner une date pour le rendre"
+          }
+        }
+      }
+    },
     "box.actor" : {
       "localizations" : {
         "en" : {
@@ -566,6 +598,38 @@
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Création d'un prêt"
+          }
+        }
+      }
+    },
+    "loan.reminder_date" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reminder date"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Date de retour"
+          }
+        }
+      }
+    },
+    "loan.select_reminder_date" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select reminder date"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Sélectionner une date de rappel"
           }
         }
       }

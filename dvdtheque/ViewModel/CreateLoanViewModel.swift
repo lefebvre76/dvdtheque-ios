@@ -18,7 +18,8 @@ class CreateLoanViewModel: AuthContainerViewModel {
 
     @Published public var contact: String = ""
     @Published public var comment: String = ""
-    @Published public var reminder: Date?
+    @Published public var showReminder: Bool = false
+    @Published public var reminder: Date = Date.now.addingTimeInterval(3600*24*30)
     
     @Published public var errorMessage: String?
     @Published public var contactErrors: [String] = []
@@ -45,8 +46,8 @@ class CreateLoanViewModel: AuthContainerViewModel {
                     "comment": self.comment,
                     "type": isBorrow ? "BORROW" : "LOAN"
                 ]
-                if let reminderDate = self.reminder {
-                    parameters["reminder"] = Int(reminderDate.timeIntervalSince1970)
+                if showReminder {
+                    parameters["reminder"] = Int(self.reminder.timeIntervalSince1970)
                 }
                 try await apiService.postLoan(parameters: parameters)
                 await setLoad(false)
