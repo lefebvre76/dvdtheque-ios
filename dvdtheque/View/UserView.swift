@@ -32,33 +32,33 @@ struct UserView: View {
                                             .foregroundColor(Color(uiColor: UIColor.label))
                                     }
                                 )
-                            }.padding(.bottom)
+                            }.padding(.bottom).padding(.horizontal)
                             
                             ScrollView {
                                 VStack(alignment: .leading) {
-                                    Text("user.favorite_kinds").font(.headline)
+                                    Text("user.favorite_kinds").font(.headline).padding(.horizontal)
                                     ScrollView(.horizontal) {
                                         HStack(spacing: 5) {
                                             ForEach(user.favorite_kinds, id: \.id) { kind in
                                                 KindItemView(name: "\(kind.name) (\(kind.total))")
                                             }
-                                        }
+                                        }.padding(.horizontal)
                                     }
-                                    Text("user.favorite_directors").font(.headline).padding(.top, 20)
+                                    Text("user.favorite_directors").font(.headline).padding(.top, 20).padding(.horizontal)
                                     ScrollView(.horizontal) {
                                         HStack(alignment: .top, spacing: 20) {
                                             ForEach(user.favorite_directors, id: \.id) { director in
                                                 CelebrityItemView(celebrity: director)
                                             }
-                                        }
+                                        }.padding(.horizontal)
                                     }
-                                    Text("user.favorite_actors").font(.headline).padding(.top, 20)
+                                    Text("user.favorite_actors").font(.headline).padding(.top, 20).padding(.horizontal)
                                     ScrollView(.horizontal) {
                                         HStack(alignment: .top, spacing: 20) {
                                             ForEach(user.favorite_actors, id: \.id) { actor in
                                                 CelebrityItemView(celebrity: actor)
                                             }
-                                        }
+                                        }.padding(.horizontal)
                                     }
                                 }
                                 NavigationLink(destination: MyBoxesView(myBoxesViewModel: MyBoxesViewModel(isWishlist: true))) {
@@ -85,11 +85,11 @@ struct UserView: View {
                                         .stroke(.red, lineWidth: 2)
                                 )
                         }
-                    )
-                }.padding()
-                    .onAppear(){
-                        userViewModel.loadUserInformations()
-                    }
+                    ).padding(.bottom).padding(.horizontal)
+                }
+                .onAppear(){
+                    userViewModel.loadUserInformations()
+                }
             }
         }
         .sheet(isPresented: $userViewModel.editionPagePresented) {

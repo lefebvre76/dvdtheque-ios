@@ -94,8 +94,9 @@ struct BoxView: View {
             }
             if boxViewModel.parent_box == nil {
                 Button("general.delete", role: .destructive) {
-                    boxViewModel.delete()
-                    dismiss()
+                    boxViewModel.delete() {
+                        dismiss()
+                    }
                 }
             }
         }

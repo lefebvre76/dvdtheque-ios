@@ -15,7 +15,8 @@ struct LoansView: View {
             if loansViewModel.loans.isEmpty, !loansViewModel.loading {
                 NavigationView {
                     VStack {
-                        Text("loans.is_empty")
+                        Spacer()
+                        Text("loans.is_empty").multilineTextAlignment(.center).padding()
                         Spacer()
                     }.refreshable {
                         loansViewModel.loadData()
@@ -25,7 +26,7 @@ struct LoansView: View {
                 NavigationStack {
                     List {
                         ForEach(loansViewModel.loans, id: \.id) { loan in
-                            NavigationLink(destination: BoxView(boxViewModel: BoxViewModel(lightBox: loan.box))) {
+                            NavigationLink(destination: LoanView(loanViewModel: LoanViewModel(loan: loan, completion: loansViewModel.loadData)).toolbar(.hidden, for: .tabBar)) {
                                 LoanItemView(loan: loan).swipeActions {
                                     Button {
                                         loansViewModel.deleteItem(loan: loan)
@@ -47,11 +48,13 @@ struct LoansView: View {
                     }
                     .listStyle(.plain)
                     .navigationTitle("menu.loans")
-                    .onAppear() {
+                    .refreshable {
                         loansViewModel.loadData()
                     }
                 }
             }
+        }.onAppear() {
+            loansViewModel.loadData()
         }
     }
 }

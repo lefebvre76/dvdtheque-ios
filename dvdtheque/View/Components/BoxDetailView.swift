@@ -53,9 +53,9 @@ struct BoxDetailView: View {
             }.frame(height: illustrationHeight)
             VStack(alignment: .leading, spacing: 15) {
                 VStack {
-                    Text(box.title).frame(maxWidth: .infinity, alignment: .leading).font(.title).padding(.bottom, 2)
+                    Text(box.title).frame(maxWidth: .infinity, alignment: .leading).font(.title).padding(.bottom, 2).padding(.horizontal)
                     if let edition = box.edition {
-                        Text(edition).frame(maxWidth: .infinity, alignment: .leading).font(.subheadline).padding(.bottom, 2)
+                        Text(edition).frame(maxWidth: .infinity, alignment: .leading).font(.subheadline).padding(.bottom, 2).padding(.horizontal)
                     }
                     HStack {
                         if box.year > 0 {
@@ -68,48 +68,48 @@ struct BoxDetailView: View {
                             .scaledToFit()
                             .foregroundColor(Color(uiColor: UIColor.label))
                             .frame(height: 25)
-                    }.frame(maxWidth: .infinity)
+                    }.frame(maxWidth: .infinity).padding(.horizontal)
                     ScrollView(.horizontal) {
                         HStack(spacing: 5) {
                             ForEach(box.kinds, id: \.id) { kind in
                                 KindItemView(name: kind.name)
                             }
-                        }
+                        }.padding(.horizontal)
                     }.padding(.vertical)
                     
-                    ExpandableText(box.synopsis, lineLimit: 3).frame(maxWidth: .infinity, alignment: .leading)
+                    ExpandableText(box.synopsis, lineLimit: 3).frame(maxWidth: .infinity, alignment: .leading).padding(.horizontal)
                     if box.directors.count > 0 {
-                        Text(box.directors.count > 1 ? "box.directors" : "box.director").font(.headline).frame(maxWidth: .infinity, alignment: .leading).padding(.top, 20)
+                        Text(box.directors.count > 1 ? "box.directors" : "box.director").font(.headline).frame(maxWidth: .infinity, alignment: .leading).padding(.top, 20).padding(.horizontal)
                         ScrollView(.horizontal) {
                             HStack(alignment: .top, spacing: 20) {
                                 ForEach(box.directors, id: \.id) { director in
                                     CelebrityItemView(celebrity: director)
                                 }
-                            }
+                            }.padding(.horizontal)
                         }
                     }
                     if box.actors.count > 0 {
-                        Text(box.actors.count > 1 ? "box.actors" : "box.actor").font(.headline).frame(maxWidth: .infinity, alignment: .leading).padding(.top, 20)
+                        Text(box.actors.count > 1 ? "box.actors" : "box.actor").font(.headline).frame(maxWidth: .infinity, alignment: .leading).padding(.top, 20).padding(.horizontal)
                         ScrollView(.horizontal) {
                             HStack(alignment: .top, spacing: 20) {
                                 ForEach(box.actors, id: \.id) { actor in
                                     CelebrityItemView(celebrity: actor)
                                 }
-                            }
+                            }.padding(.horizontal)
                         }
                     }
                     if box.composers.count > 0 {
-                        Text(box.composers.count > 1 ? "box.composers" : "box.composer").font(.headline).frame(maxWidth: .infinity, alignment: .leading).padding(.top, 20)
+                        Text(box.composers.count > 1 ? "box.composers" : "box.composer").font(.headline).frame(maxWidth: .infinity, alignment: .leading).padding(.top, 20).padding(.horizontal)
                         ScrollView(.horizontal) {
                             HStack(alignment: .top, spacing: 20) {
                                 ForEach(box.composers, id: \.id) { composer in
                                     CelebrityItemView(celebrity: composer)
                                 }
-                            }
+                            }.padding(.horizontal)
                         }
                     }
                     if box.boxes.count > 0 {
-                        Text("box.in_package").font(.headline).frame(maxWidth: .infinity, alignment: .leading).padding(.top, 20)
+                        Text("box.in_package").font(.headline).frame(maxWidth: .infinity, alignment: .leading).padding(.top, 20).padding(.horizontal)
                         ForEach(box.boxes, id: \.id) { subBox in
                             NavigationLink(destination: BoxView(boxViewModel: BoxViewModel(lightBox: subBox, parent_box: box))) {
                                 BoxItemView(box: subBox)
@@ -118,7 +118,7 @@ struct BoxDetailView: View {
 
                     }
                     Spacer()
-                }.padding()
+                }.padding(.vertical)
                 .background(Color(UIColor.systemBackground))
                 .cornerRadius(5)
                 .offset(y: -20)

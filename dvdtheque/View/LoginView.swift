@@ -53,11 +53,7 @@ struct LoginView: View {
                         Text(loginViewModel.showRegistration ? "button.register" : "button.login")
                     }
                 }
-            )
-            .frame(maxWidth: .infinity, maxHeight: 45)
-            .foregroundColor(Color.white)
-            .background(Color.blue)
-            .cornerRadius(30)
+            ).buttonStyle(PrimaryButton())
             .padding(.top).disabled(loginViewModel.load)
         }
         .padding()

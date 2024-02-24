@@ -7,11 +7,13 @@
 
 import Foundation
 
+
 class DvdthequeApiService: ApiService {
     
     enum Endpoint {
         
-        static let baseURL: String  = "http://localhost/api/"
+        static let baseURL: String  = "https://dvd.llefebvre.fr/api/"
+//        static let baseURL: String  = "http://192.168.1.62/api/"
 
         case login
         case register
@@ -131,6 +133,20 @@ class DvdthequeApiService: ApiService {
             "wishlist": wishlist
         ])
         let decoded = try JSONDecoder().decode(Box.self, from: data)
+        return decoded
+    }
+
+    func getLoans(page: Int = 1) async throws -> LoanBoxResponse {
+        let (data, _) = try await self.call(url: Endpoint.loans.absoluteURL.appending(parameters: [
+            "page": page
+        ]))
+        let decoded = try JSONDecoder().decode(LoanBoxResponse.self, from: data)
+        return decoded
+    }
+
+    func getLoan(id: Int) async throws -> Loan {
+        let (data, _) = try await self.call(url: Endpoint.loan(id: id).absoluteURL)
+        let decoded = try JSONDecoder().decode(Loan.self, from: data)
         return decoded
     }
     

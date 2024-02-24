@@ -16,10 +16,12 @@ class BoxViewModel: AuthContainerViewModel {
     @Published public var isBorrow = false
     
     public let lightBox: LightBox
+    public let completion: (() -> Void)?
 
-    init(lightBox: LightBox, parent_box: Box? = nil) {
+    init(lightBox: LightBox, parent_box: Box? = nil, completion: (() -> Void)? = nil) {
         self.lightBox = lightBox
         self.parent_box = parent_box
+        self.completion = completion
     }
     
     override func userIsLogged() {
@@ -34,11 +36,13 @@ class BoxViewModel: AuthContainerViewModel {
         }
     }
 
-    func delete() {
+    func delete(completionHandler: @escaping () -> Void) {
         showLoading(value: true)
         Task {
             do {
                 try await apiService.deleteMyBoxes(id: self.lightBox.id)
+                self.completion?()
+                completionHandler()
             } catch {
                 self.managerError(error: error)
                 self.showToast(title: "general.error", isError: true)

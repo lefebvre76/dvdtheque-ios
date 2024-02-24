@@ -16,7 +16,8 @@ struct MyBoxesView: View {
             if myBoxesViewModel.boxes.isEmpty, !myBoxesViewModel.loading, myBoxesViewModel.searchText == "" {
                 NavigationView {
                     VStack {
-                        Text(myBoxesViewModel.isWishlist ? "wishlist.is_empty" : "boxes.is_empty")
+                        Spacer()
+                        Text(myBoxesViewModel.isWishlist ? "wishlist.is_empty" : "boxes.is_empty").multilineTextAlignment(.center).padding()
                         Spacer()
                     }
                     .navigationTitle(myBoxesViewModel.isWishlist ? "menu.wishlist" : "menu.boxes")
@@ -28,7 +29,7 @@ struct MyBoxesView: View {
                     }
                     List {
                         ForEach(myBoxesViewModel.boxes, id: \.id) { box in
-                            NavigationLink(destination: BoxView(boxViewModel: BoxViewModel(lightBox: box))) {
+                            NavigationLink(destination: BoxView(boxViewModel: BoxViewModel(lightBox: box, completion: myBoxesViewModel.loadData)).toolbar(.hidden, for: .tabBar)) {
                                 BoxItemView(box: box).swipeActions {
                                     Button {
                                         myBoxesViewModel.launchDeleteItem(box: box)
@@ -57,6 +58,9 @@ struct MyBoxesView: View {
                         }
                     }
                     .searchable(text: $myBoxesViewModel.searchText)
+                    .refreshable {
+                        myBoxesViewModel.loadData()
+                    }
                     .onChange(of: myBoxesViewModel.searchText) { _, newValue in
                         if newValue == "" {
                             myBoxesViewModel.loadData()
@@ -66,9 +70,6 @@ struct MyBoxesView: View {
                     }
                     .listStyle(.plain)
                     .navigationTitle(myBoxesViewModel.isWishlist ? "menu.wishlist" : "menu.boxes")
-                    .onAppear() {
-                        myBoxesViewModel.loadData()
-                    }
                     .confirmationDialog(
                         Text("box.delete_confirmation".localized(arguments: "\(myBoxesViewModel.toBeDeleted?.title ?? "")")),
                         isPresented: $myBoxesViewModel.showingDeleteAlert,
@@ -82,6 +83,9 @@ struct MyBoxesView: View {
                     }
                 }
             }
+        }
+        .onAppear() {
+            myBoxesViewModel.loadData()
         }
     }
 }
