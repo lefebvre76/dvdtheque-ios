@@ -325,7 +325,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Dans le coffret :"
+            "value" : "Films du coffret :"
           }
         }
       }
@@ -914,6 +914,17 @@
         }
       }
     },
+    "menu.movies" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mes films"
+          }
+        }
+      }
+    },
     "menu.wishlist" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -927,6 +938,17 @@
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Voir ma Wishlist"
+          }
+        }
+      }
+    },
+    "movie.parent_packages" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Film présent dans les coffrets :"
           }
         }
       }

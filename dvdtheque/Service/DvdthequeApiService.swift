@@ -20,10 +20,12 @@ class DvdthequeApiService: ApiService {
         case logout
         case me
         case myBoxes
+        case myMovies
         case boxes
         case loans
         case loan(id: Int)
         case box(id: Int)
+        case movie(id: Int)
         case setMyBoxes(id: Int)
         
         func path() -> String {
@@ -48,6 +50,10 @@ class DvdthequeApiService: ApiService {
                 return "me/boxes/\(id)"
             case .myBoxes:
                 return "me/boxes"
+            case .myMovies:
+                return "me/movies"
+            case .movie(id: let id):
+                return "movies/\(id)"
             }
         }
         
@@ -168,5 +174,20 @@ class DvdthequeApiService: ApiService {
     
     func deleteLoan(id: Int) async throws {
         let (_, _) = try await self.call(url: Endpoint.loan(id: id).absoluteURL, httpMethod: .delete)
+    }
+
+    func getMeMovies(page: Int = 1, search: String = "") async throws -> LightBoxResponse {
+        let (data, _) = try await self.call(url: Endpoint.myMovies.absoluteURL.appending(parameters: [
+            "page": page,
+            "search": search
+        ]))
+        let decoded = try JSONDecoder().decode(LightBoxResponse.self, from: data)
+        return decoded
+    }
+    
+    func getMovie(id: Int = 1) async throws -> Movie {
+        let (data, _) = try await self.call(url: Endpoint.movie(id: id).absoluteURL)
+        let decoded = try JSONDecoder().decode(Movie.self, from: data)
+        return decoded
     }
 }

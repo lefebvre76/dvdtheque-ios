@@ -21,6 +21,9 @@ struct ContentView: View {
             MyBoxesView(myBoxesViewModel: MyBoxesViewModel()).tabItem {
                 Label("menu.boxes", systemImage: "opticaldisc.fill")
             }
+            MyMoviesView(myMoviesViewModel: MyMoviesViewModel()).tabItem {
+                Label("menu.movies", systemImage: "film")
+            }
             BarCodeScannerView().tabItem {
                 Label("menu.add", systemImage: "barcode.viewfinder")
             }
