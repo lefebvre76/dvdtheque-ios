@@ -29,6 +29,18 @@
           }
         }
       }
+    },
+    "NSContactsUsageDescription" : {
+      "comment" : "Privacy - Contacts Usage Description",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Pour la gestion de vos prêts"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

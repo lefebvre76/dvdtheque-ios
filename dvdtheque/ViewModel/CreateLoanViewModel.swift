@@ -25,6 +25,8 @@ class CreateLoanViewModel: AuthContainerViewModel {
     @Published public var contactErrors: [String] = []
     @Published public var commentErrors: [String] = []
     @Published public var reminderErrors: [String] = []
+    @Published public var showContactSelection = false
+    @Published public var selectedContact: PhoneContact?
 
     init(box: Box, parentBox: Box?, isBorrow: Bool = false, completion: (() -> Void)? = nil) {
         self.box = LightBox(id: box.id, type: box.type, title: box.title, illustration: box.illustration, loaned: false)

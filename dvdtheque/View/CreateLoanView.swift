@@ -33,7 +33,16 @@ struct CreateLoanView: View {
                     Text("loan.from_box".localized(arguments: parent.title)).italic()
                 }
                 VStack {
-                    TextFieldError(text: $createLoanViewModel.contact, placeholder: createLoanViewModel.isBorrow ? "borrow.contact" : "loan.contact", errors: createLoanViewModel.contactErrors)
+                    HStack {
+                        TextFieldError(text: $createLoanViewModel.contact, placeholder: createLoanViewModel.isBorrow ? "borrow.contact" : "loan.contact", errors: createLoanViewModel.contactErrors)
+                        Button(action: {
+                            createLoanViewModel.showContactSelection = true
+                        }, label: {
+                            Image(systemName: "person.crop.circle.badge.plus")
+                                .font(.system(size: 25))
+                                .padding(5)
+                        }).padding(.bottom)
+                    }
                     
                     Toggle(createLoanViewModel.isBorrow ? "borrow.select_reminder_date" : "loan.select_reminder_date", isOn: $createLoanViewModel.showReminder).onChange(of: createLoanViewModel.showReminder) { _, value in
                         if value {
@@ -70,6 +79,12 @@ struct CreateLoanView: View {
                 .cornerRadius(30)
                 .padding(.top).disabled(createLoanViewModel.load)
             }.padding()
+            .sheet(isPresented: $createLoanViewModel.showContactSelection) {
+                PhoneContactSelectorView(selectedContact: createLoanViewModel.selectedContact) { contact in
+                    createLoanViewModel.selectedContact = contact
+                    createLoanViewModel.contact = contact?.name ?? ""
+                }
+            }
         }
     }
 }

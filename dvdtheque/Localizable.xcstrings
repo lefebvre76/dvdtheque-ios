@@ -549,6 +549,23 @@
         }
       }
     },
+    "general.search" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Search"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rechercher"
+          }
+        }
+      }
+    },
     "general.see_less" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -595,6 +612,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Chargement des données"
+          }
+        }
+      }
+    },
+    "loan.add_contact" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add contact"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajouter un contact"
           }
         }
       }
@@ -700,6 +734,17 @@
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Date de retour"
+          }
+        }
+      }
+    },
+    "loan.select_contact" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sélectionner %@"
           }
         }
       }
