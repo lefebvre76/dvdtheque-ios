@@ -160,6 +160,12 @@ class DvdthequeApiService: ApiService {
         return decoded
     }
     
+    func putLoan(id: Int, parameters: [String: Any]) async throws -> Loan {
+        let (data, _) = try await self.call(url: Endpoint.loan(id: id).absoluteURL, httpMethod: .put, parameters: parameters)
+        let decoded = try JSONDecoder().decode(Loan.self, from: data)
+        return decoded
+    }
+    
     func deleteLoan(id: Int) async throws {
         let (_, _) = try await self.call(url: Endpoint.loan(id: id).absoluteURL, httpMethod: .delete)
     }

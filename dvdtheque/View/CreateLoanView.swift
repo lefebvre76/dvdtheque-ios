@@ -15,51 +15,58 @@ struct CreateLoanView: View {
     var body: some View {
         AuthContainerView(authContainerViewModel: createLoanViewModel) {
             VStack {
-                HStack() {
-                    Text(createLoanViewModel.isBorrow ? "borrow.create" : "loan.create").font(.title)
-                    Spacer()
-                    Button(action: {
-                        dismiss()
-                    }, label: {
-                        Image(systemName: "xmark")
-                            .font(.system(size: 20))
-                            .foregroundColor(Color(uiColor: UIColor.label))
-                            .padding()
-                            .padding(.trailing, 0)
-                    })
-                }
-                BoxItemView(box: createLoanViewModel.box)
-                if let parent = createLoanViewModel.parentBox {
-                    Text("loan.from_box".localized(arguments: parent.title)).italic()
-                }
-                VStack {
-                    HStack {
-                        TextFieldError(text: $createLoanViewModel.contact, placeholder: createLoanViewModel.isBorrow ? "borrow.contact" : "loan.contact", errors: createLoanViewModel.contactErrors)
+                ScrollView {
+                    HStack() {
+                        if createLoanViewModel.loanId != nil {
+                            Text(createLoanViewModel.isBorrow ? "borrow.edit" : "loan.edit").font(.title)
+                            
+                        } else {
+                            Text(createLoanViewModel.isBorrow ? "borrow.create" : "loan.create").font(.title)
+                        }
+                        Spacer()
                         Button(action: {
-                            createLoanViewModel.showContactSelection = true
+                            dismiss()
                         }, label: {
-                            Image(systemName: "person.crop.circle.badge.plus")
-                                .font(.system(size: 25))
-                                .padding(5)
-                        }).padding(.bottom)
+                            Image(systemName: "xmark")
+                                .font(.system(size: 20))
+                                .foregroundColor(Color(uiColor: UIColor.label))
+                                .padding()
+                                .padding(.trailing, 0)
+                        })
                     }
-                    
-                    Toggle(createLoanViewModel.isBorrow ? "borrow.select_reminder_date" : "loan.select_reminder_date", isOn: $createLoanViewModel.showReminder).onChange(of: createLoanViewModel.showReminder) { _, value in
-                        if value {
-                            createLoanViewModel.askNotificationPermissions()
+                    BoxItemView(box: createLoanViewModel.box)
+                    if let parent = createLoanViewModel.parentBox {
+                        Text("loan.from_box".localized(arguments: parent.title)).italic()
+                    }
+                    VStack {
+                        HStack {
+                            TextFieldError(text: $createLoanViewModel.contact, placeholder: createLoanViewModel.isBorrow ? "borrow.contact" : "loan.contact", errors: createLoanViewModel.contactErrors)
+                            Button(action: {
+                                createLoanViewModel.showContactSelection = true
+                            }, label: {
+                                Image(systemName: "person.crop.circle.badge.plus")
+                                    .font(.system(size: 25))
+                                    .padding(5)
+                            }).padding(.bottom)
                         }
-                    }
-                    
-                    if createLoanViewModel.showReminder {
-                        DatePicker(createLoanViewModel.isBorrow ? "borrow.reminder_date" : "loan.reminder_date", selection: $createLoanViewModel.reminder)
-                        ForEach(createLoanViewModel.reminderErrors, id: \.self) { message in
-                            Text(message).font(.caption2).multilineTextAlignment(.leading).foregroundColor(.red)
+                        
+                        Toggle(createLoanViewModel.isBorrow ? "borrow.select_reminder_date" : "loan.select_reminder_date", isOn: $createLoanViewModel.showReminder).onChange(of: createLoanViewModel.showReminder) { _, value in
+                            if value {
+                                createLoanViewModel.askNotificationPermissions()
+                            }
+                        }.offset(x: -2)
+                        
+                        if createLoanViewModel.showReminder {
+                            DatePicker(createLoanViewModel.isBorrow ? "borrow.reminder_date" : "loan.reminder_date", selection: $createLoanViewModel.reminder)
+                            ForEach(createLoanViewModel.reminderErrors, id: \.self) { message in
+                                Text(message).font(.caption2).multilineTextAlignment(.leading).foregroundColor(.red)
+                            }
                         }
-                    }
-                    Divider()
-                    .padding(.bottom)
-                    TextFieldError(text: $createLoanViewModel.comment, placeholder: "loan.comment", errors: createLoanViewModel.commentErrors, isMultiLine: true)
-                }.padding(.top)
+                        Divider()
+                            .padding(.bottom)
+                        TextFieldError(text: $createLoanViewModel.comment, placeholder: "loan.comment", errors: createLoanViewModel.commentErrors, isMultiLine: true)
+                    }.padding(.top)
+                }
                 Spacer()
                 Button(
                     action: createLoanViewModel.persisteLoan,

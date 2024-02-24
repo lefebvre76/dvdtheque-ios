@@ -12,7 +12,8 @@ class CreateLoanViewModel: AuthContainerViewModel {
     public var box: LightBox
     public var isBorrow: Bool
     public var parentBox: LightBox?
-    private var completion: (() -> Void)?
+    public var loanId: Int?
+    private var completion: ((Loan) -> Void)?
 
     @Published public var load: Bool = false
 
@@ -28,13 +29,28 @@ class CreateLoanViewModel: AuthContainerViewModel {
     @Published public var showContactSelection = false
     @Published public var selectedContact: PhoneContact?
 
-    init(box: Box, parentBox: Box?, isBorrow: Bool = false, completion: (() -> Void)? = nil) {
+    init(box: Box, parentBox: Box?, isBorrow: Bool = false, completion: ((Loan) -> Void)? = nil) {
         self.box = LightBox(id: box.id, type: box.type, title: box.title, illustration: box.illustration, loaned: false)
         if let pBox = parentBox {
             self.parentBox = LightBox(id: pBox.id, type: pBox.type, title: pBox.title, illustration: pBox.illustration, loaned: false)
         }
         self.completion = completion
         self.isBorrow = isBorrow
+        super.init(loading: false)
+    }
+    
+    init(loan: Loan, completion: ((Loan) -> Void)? = nil) {
+        self.loanId = loan.id
+        self.contact = loan.contact
+        self.comment = loan.comment ?? ""
+        if let date = loan.reminderDateToDate() {
+            self.showReminder = true
+            self.reminder = date
+        }
+        self.box = loan.box
+        self.parentBox = loan.parent_box
+        self.isBorrow = loan.type == "BORROW"
+        self.completion = completion
         super.init(loading: false)
     }
     
@@ -64,12 +80,21 @@ class CreateLoanViewModel: AuthContainerViewModel {
                 if let pBox = parentBox {
                     parameters["box_parent_id"] = pBox.id
                 }
-                let loan = try await apiService.postLoan(parameters: parameters)
-                Notifications().createNotification(loan: loan)
-                await setLoad(false)
-                if let completion = self.completion {
-                    completion()
+                if let id = self.loanId {
+                    Notifications().removeNotification(loanId: id)
+                    let loan = try await apiService.putLoan(id: id, parameters: parameters)
+                    Notifications().createNotification(loan: loan)
+                    if let completion = self.completion {
+                        completion(loan)
+                    }
+                } else {
+                    let loan = try await apiService.postLoan(parameters: parameters)
+                    Notifications().createNotification(loan: loan)
+                    if let completion = self.completion {
+                        completion(loan)
+                    }
                 }
+                await setLoad(false)
             } catch ApiService.ApiError.unprocessableEntity(let errors) {
                 if let messages = errors["errors"] as? [String: Any] {
                     if let items = messages["contact"] as? [String] {

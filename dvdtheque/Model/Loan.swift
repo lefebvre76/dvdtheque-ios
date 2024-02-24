@@ -17,12 +17,16 @@ struct Loan: Decodable {
     let parent_box: LightBox?
     
     func reminderDatetoString() -> String? {
-        guard let timestamp = reminder else { return nil }
+        guard let date = reminderDateToDate() else { return nil }
         let dateFormatter = DateFormatter()
         dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
         dateFormatter.setLocalizedDateFormatFromTemplate("ddMMyyyy")
-        let date = Date(timeIntervalSince1970: TimeInterval(timestamp))
         return dateFormatter.string(from: date)
+    }
+
+    func reminderDateToDate() -> Date? {
+        guard let timestamp = reminder else { return nil }
+        return Date(timeIntervalSince1970: TimeInterval(timestamp))
     }
     
     func reminderDateIsPast() -> Bool {

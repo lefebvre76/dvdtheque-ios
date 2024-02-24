@@ -136,7 +136,7 @@ struct ScannedBoxView: View {
             }).navigationBarHidden(true)
         }
         .sheet(isPresented: $scannedBoxViewModel.showLoanForm) {
-            CreateLoanView(createLoanViewModel: CreateLoanViewModel(box: scannedBoxViewModel.box, parentBox: nil, isBorrow: scannedBoxViewModel.isBorrow, completion: {
+            CreateLoanView(createLoanViewModel: CreateLoanViewModel(box: scannedBoxViewModel.box, parentBox: nil, isBorrow: scannedBoxViewModel.isBorrow, completion: { _ in
                 scannedBoxViewModel.close()
             }))
         }

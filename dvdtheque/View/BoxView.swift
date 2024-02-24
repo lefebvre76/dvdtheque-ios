@@ -50,7 +50,7 @@ struct BoxView: View {
                         }
                 }).navigationBarHidden(true)
                 .sheet(isPresented: $boxViewModel.showLoanForm) {
-                    CreateLoanView(createLoanViewModel: CreateLoanViewModel(box: box, parentBox: boxViewModel.parent_box, isBorrow: boxViewModel.isBorrow, completion: {
+                    CreateLoanView(createLoanViewModel: CreateLoanViewModel(box: box, parentBox: boxViewModel.parent_box, isBorrow: boxViewModel.isBorrow, completion: { _ in
                         boxViewModel.closeLoanView()
                         boxViewModel.loadData()
                     }))

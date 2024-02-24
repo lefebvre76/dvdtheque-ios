@@ -70,6 +70,22 @@
         }
       }
     },
+    "borrow.edit" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Edit borrow"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Édition d'un emprunt"
+          }
+        }
+      }
+    },
     "borrow.reminder_date" : {
       "localizations" : {
         "en" : {
@@ -515,6 +531,23 @@
         }
       }
     },
+    "general.edit" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Edit"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Editer"
+          }
+        }
+      }
+    },
     "general.error" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -636,9 +669,15 @@
     "loan.borrow_to" : {
       "extractionState" : "manual",
       "localizations" : {
-        "fr" : {
+        "en" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "Borrow to %@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "Emprunté à %@"
           }
         }
@@ -694,6 +733,22 @@
         }
       }
     },
+    "loan.edit" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Edit loan"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Édition d'un prêt"
+          }
+        }
+      }
+    },
     "loan.from_box" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -714,9 +769,15 @@
     "loan.loan_at" : {
       "extractionState" : "manual",
       "localizations" : {
-        "fr" : {
+        "en" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "Loan at %@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "Prêté à %@"
           }
         }
@@ -741,9 +802,15 @@
     "loan.select_contact" : {
       "extractionState" : "manual",
       "localizations" : {
-        "fr" : {
+        "en" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "Select %@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "Sélectionner %@"
           }
         }
@@ -768,9 +835,15 @@
     "loans.is_empty" : {
       "extractionState" : "manual",
       "localizations" : {
-        "fr" : {
+        "en" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "There is not loan for the moment"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "Il n'y a pas de prêt ni d'emprunt pour le moment"
           }
         }

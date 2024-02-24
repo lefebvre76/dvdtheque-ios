@@ -20,7 +20,21 @@ struct LoanView: View {
                     VStack() {
                         LoanDetailView(loan: loanViewModel.loan, opacity: $opacity)
                         Spacer()
-                        VStack {
+                        VStack(spacing: 0) {
+                            Button(
+                                action: {
+                                    loanViewModel.showLoanForm = true
+                                },
+                                label: {
+                                    Text("general.edit")
+                                        .frame(maxWidth: .infinity, maxHeight: 45)
+                                        .overlay(
+                                            RoundedRectangle(cornerRadius: 23)
+                                                .stroke(.blue, lineWidth: 2)
+                                        )
+                                }
+                            ).padding(.bottom)
+
                             Button((loanViewModel.loan.type == "LOAN" ? "box.return_to_me" : "box.return_to").localized(arguments: loanViewModel.loan.contact)) {
                                 loanViewModel.delete() {
                                     dismiss()
@@ -51,10 +65,9 @@ struct LoanView: View {
                         }
                 }).navigationBarHidden(true)
                 .sheet(isPresented: $loanViewModel.showLoanForm) {
-//                    CreateLoanView(createLoanViewModel: CreateLoanViewModel(box: box, parentBox: boxViewModel.parent_box, isBorrow: boxViewModel.isBorrow, completion: {
-//                        boxViewModel.closeLoanView()
-//                        boxViewModel.loadData()
-//                    }))
+                    CreateLoanView(createLoanViewModel: CreateLoanViewModel(loan: loanViewModel.loan, completion: { loan in
+                        loanViewModel.updatedLoan(loan: loan)
+                    }))
                 }
             }.onAppear {
                 loanViewModel.loadData()

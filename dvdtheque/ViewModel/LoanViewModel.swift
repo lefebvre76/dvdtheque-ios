@@ -47,6 +47,13 @@ class LoanViewModel: AuthContainerViewModel {
             showLoading(value: false)
         }
     }
+    
+    func updatedLoan(loan: Loan) {
+        Task {
+            await setLoan(loan)
+            await setShowLoanForm(false)
+        }
+    }
 
     private func loadDetails() async {
         do {
